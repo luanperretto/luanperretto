@@ -24,7 +24,7 @@
       max-width: 650px; 
       margin: 0 auto; 
       line-height: 1.6; 
-      /* Espaço extra no fim da página para permitir a rolagem até o topo do título */
+      /* Espaço no final para rolagem completa até o último item */
       padding-bottom: 450px; 
     }
     
@@ -52,7 +52,7 @@
     }
     nav a:hover { color: #000; }
 
-    /* Posição exata do travamento da rolagem para cada item */
+    /* Posição exata do travamento da rolagem */
     #contato, #sobre, #trabalhos {
       scroll-margin-top: 90px;
     }
@@ -105,41 +105,26 @@
       margin-bottom: 25px; 
     }
 
-    /* LISTA VERTICAL DE PROJETOS */
-    .projects-list {
+    /* GALERIA VERTICAL DE TRABALHOS */
+    .gallery {
       display: flex;
       flex-direction: column;
       gap: 30px;
     }
 
-    /* Card do projeto com efeito interativo */
-    .project-card {
-      background-color: #f5f3ef;
-      border-radius: 12px;
-      padding: 24px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-decoration: none;
-      color: inherit;
+    /* Estilo para PNGs e GIFs */
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       display: block;
-    }
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
     }
 
-    .project-card h3 { 
-      font-size: 18px; 
-      font-weight: bold; 
-      margin-bottom: 10px; 
-      color: #111; 
+    .gallery img:hover {
+      transform: scale(1.01);
     }
-    .project-card p { 
-      font-size: 14px; 
-      color: #444; 
-      line-height: 1.5; 
-      margin-bottom: 20px; 
-    }
-    .project-card img { width: 100%; border-radius: 8px; display: block; }
   </style>
 </head>
 <body>
@@ -178,30 +163,21 @@
     </div>
   </section>
 
-  <!-- Seção Trabalhos (Vertical) -->
+  <!-- Seção Trabalhos (Sequência de PNGs e GIFs) -->
   <section id="trabalhos">
     <h2 class="section-title">Trabalhos</h2>
 
-    <div class="projects-list">
-
-      <!-- PROJETO 1 -->
-      <a href="LINK_DO_SEU_PROJETO_1" class="project-card" target="_blank">
-        <div>
-          <h3>Nome do Projeto 1</h3>
-          <p>Descrição do seu trabalho aqui. Explique brevemente o conceito do projeto, as ferramentas utilizadas ou o objetivo visual.</p>
-        </div>
-        <img src="projeto1.png" alt="Preview do projeto 1">
-      </a>
-
-      <!-- PROJETO 2 -->
-      <a href="LINK_DO_SEU_PROJETO_2" class="project-card" target="_blank">
-        <div>
-          <h3>Nome do Projeto 2</h3>
-          <p>Descrição do segundo projeto. Ao organizar em lista vertical, o visitante rola a página para baixo vendo cada card inteiro.</p>
-        </div>
-        <img src="projeto2.png" alt="Preview do projeto 2">
-      </a>
-
+    <div class="gallery">
+      <img src="imagem1.png" alt="Trabalho 1">
+      <img src="imagem2.png" alt="Trabalho 2">
+      <img src="imagem3.png" alt="Trabalho 3">
+      <img src="imagem4.png" alt="Trabalho 4">
+      <img src="imagem5.gif" alt="Trabalho 5">
+      <img src="imagem6.png" alt="Trabalho 6">
+      <img src="imagem7.png" alt="Trabalho 7">
+      <img src="imagem8.png" alt="Trabalho 8">
+      <img src="imagem9.gif" alt="Trabalho 9">
+      <img src="imagem10.png" alt="Trabalho 10">
     </div>
   </section>
 
