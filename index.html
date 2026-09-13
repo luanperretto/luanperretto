@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luan Perretto | Portfólio</title>
+  <!-- Ícones das redes sociais -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Courier New', Courier, monospace; color: #111; background-color: #fff; padding: 20px; max-width: 650px; margin: 0 auto; line-height: 1.6; }
+    
+    /* Menu superior */
+    nav { display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 40px; font-family: sans-serif; letter-spacing: 1px; font-size: 14px; }
+    nav a { text-decoration: none; color: #555; font-weight: bold; text-transform: uppercase; }
+    nav a:hover { color: #000; }
+
+    /* Cabeçalho */
+    h1 { font-family: sans-serif; font-size: 28px; font-weight: normal; margin-bottom: 10px; color: #111; }
+    .subtitle { font-size: 13px; font-family: 'Courier New', Courier, monospace; letter-spacing: 1px; color: #444; margin-bottom: 25px; text-transform: uppercase; }
+    
+    /* Redes Sociais */
+    .social-links { display: flex; gap: 12px; margin-bottom: 40px; }
+    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #f4f5f7; border-radius: 50%; color: #000; text-decoration: none; font-size: 18px; transition: 0.2s; }
+    .social-links a:hover { background-color: #e2e8f0; }
+
+    /* Bio */
+    .bio { font-size: 15px; margin-bottom: 40px; color: #222; }
+
+    /* Título da Seção */
+    .section-title { font-family: sans-serif; font-size: 22px; font-weight: normal; border-top: 1px solid #ddd; padding-top: 20px; margin-bottom: 25px; }
+
+    /* CARROSSEL HORIZONTAL (Deslizar para o lado) */
+    .carousel-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 15px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Esconde barra de rolagem */
+    .carousel-container::-webkit-scrollbar { display: none; }
+    .carousel-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Card individual do projeto */
+    .project-card {
+      flex: 0 0 85%;
+      max-width: 400px;
+      background-color: #f5f3ef;
+      border-radius: 12px;
+      padding: 24px;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card h3 { font-family: sans-serif; font-size: 20px; font-weight: bold; margin-bottom: 12px; color: #111; }
+    .project-card p { font-size: 14px; color: #444; line-height: 1.5; margin-bottom: 20px; }
+    .project-card img { width: 100%; border-radius: 6px; display: block; margin-top: auto; }
+  </style>
+</head>
+<body>
+
+  <!-- Menu -->
+  <nav>
+    <a href="#work">WORK</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#about">ABOUT</a>
+  </nav>
+
+  <!-- Cabeçalho -->
+  <h1>Luan Perretto</h1>
+  <div class="subtitle">SUA PROFISSÃO | SUA ESPECIALIDADE | SEU FOCO</div>
+
+  <!-- Redes Sociais -->
+  <div class="social-links">
+    <a href="https://twitter.com/seuusuario" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://github.com/luanperretto" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://linkedin.com/in/seuusuario" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+
+  <!-- Biografia -->
+  <div class="bio">
+    Escreva aqui a sua apresentação. Você pode falar sobre a sua área de atuação, quais ferramentas domina e o que você mais gosta de fazer na sua profissão.
+  </div>
+
+  <h2 class="section-title">Recent works & projects</h2>
+
+  <!-- Container dos cards deslizantes -->
+  <div class="carousel-container">
+
+    <!-- Card 1 -->
+    <div class="project-card">
+      <div>
+        <h3>Nome do Projeto 1</h3>
+        <p>Descrição breve do projeto. Explique o que você fez, as ferramentas utilizadas ou o objetivo do trabalho.</p>
+      </div>
+      <img src="projeto1.png" alt="Preview do projeto 1">
+    </div>
+
+    <!-- Card 2 -->
+    <div class="project-card">
+      <div>
+        <h3>Nome do Projeto 2</h3>
+        <p>Descrição breve do segundo projeto com detalhes sobre a execução.</p>
+      </div>
+      <img src="projeto2.png" alt="Preview do projeto 2">
+    </div>
+
+  </div>
+
+</body>
+</html>
