@@ -50,6 +50,11 @@
     }
     nav a:hover { color: #000; }
 
+    /* Compensação para a rolagem não ficar escondida atrás do menu fixo */
+    #contato, #sobre, #trabalhos {
+      scroll-margin-top: 70px;
+    }
+
     /* Cabeçalho */
     h1 { 
       font-size: 28px; 
@@ -139,7 +144,7 @@
 
   <!-- Menu ajustado -->
   <nav>
-    <a href="#contatos">Contato</a>
+    <a href="#contato">Contato</a>
     <a href="#sobre">Sobre</a>
     <a href="#trabalhos">Trabalhos</a>
   </nav>
@@ -148,8 +153,8 @@
   <h1>Luan Perretto</h1>
   <div class="subtitle">Editor de Geografia | Cartógrafo | Infografista</div>
 
-  <!-- Redes Sociais (Seção de Contatos) -->
-  <div class="social-links" id="contatos">
+  <!-- Redes Sociais (Seção de Contato) -->
+  <div class="social-links" id="contato">
     <!-- LinkedIn -->
     <a href="https://www.linkedin.com/in/luanperretto/?skipRedirect=true" target="_blank" title="LinkedIn">
       <i class="fa-brands fa-linkedin-in"></i>
