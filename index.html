@@ -3,114 +3,200 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luan Perretto | Portfólio</title>
-  <!-- Ícones das redes sociais -->
+  <title>LUAN PERRETTO | PORTFÓLIO</title>
+  <!-- Ícones das redes sociais (FontAwesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Courier New', Courier, monospace; color: #111; background-color: #fff; padding: 20px; max-width: 650px; margin: 0 auto; line-height: 1.6; }
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      font-family: 'Courier New', Courier, monospace; 
+    }
     
-    /* Menu superior */
-    nav { display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding-bottom: 15px; margin-bottom: 40px; font-family: sans-serif; letter-spacing: 1px; font-size: 14px; }
-    nav a { text-decoration: none; color: #555; font-weight: bold; text-transform: uppercase; }
+    /* Efeito de rolagem suave quando clica nas abas */
+    html { scroll-behavior: smooth; }
+
+    body { 
+      color: #111; 
+      background-color: #fff; 
+      padding: 20px; 
+      max-width: 650px; 
+      margin: 0 auto; 
+      line-height: 1.6; 
+    }
+    
+    /* Menu superior fixo */
+    nav { 
+      display: flex; 
+      justify-content: space-between; 
+      border-bottom: 1px solid #ddd; 
+      padding-bottom: 15px; 
+      margin-bottom: 40px; 
+      letter-spacing: 1px; 
+      font-size: 14px; 
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      padding-top: 10px;
+      z-index: 10;
+    }
+    nav a { 
+      text-decoration: none; 
+      color: #555; 
+      font-weight: bold; 
+      text-transform: uppercase; 
+      transition: color 0.2s; 
+    }
     nav a:hover { color: #000; }
 
     /* Cabeçalho */
-    h1 { font-family: sans-serif; font-size: 28px; font-weight: normal; margin-bottom: 10px; color: #111; }
-    .subtitle { font-size: 13px; font-family: 'Courier New', Courier, monospace; letter-spacing: 1px; color: #444; margin-bottom: 25px; text-transform: uppercase; }
+    h1 { 
+      font-size: 28px; 
+      font-weight: bold; 
+      margin-bottom: 10px; 
+      color: #111; 
+    }
+    .subtitle { 
+      font-size: 13px; 
+      letter-spacing: 1px; 
+      color: #444; 
+      margin-bottom: 25px; 
+      text-transform: uppercase; 
+    }
     
     /* Redes Sociais */
     .social-links { display: flex; gap: 12px; margin-bottom: 40px; }
-    .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #f4f5f7; border-radius: 50%; color: #000; text-decoration: none; font-size: 18px; transition: 0.2s; }
-    .social-links a:hover { background-color: #e2e8f0; }
-
-    /* Bio */
-    .bio { font-size: 15px; margin-bottom: 40px; color: #222; }
-
-    /* Título da Seção */
-    .section-title { font-family: sans-serif; font-size: 22px; font-weight: normal; border-top: 1px solid #ddd; padding-top: 20px; margin-bottom: 25px; }
-
-    /* CARROSSEL HORIZONTAL (Deslizar para o lado) */
-    .carousel-container {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: 15px;
-      -webkit-overflow-scrolling: touch;
+    .social-links a { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      width: 40px; 
+      height: 40px; 
+      background-color: #f4f5f7; 
+      border-radius: 50%; 
+      color: #000; 
+      text-decoration: none; 
+      font-size: 18px; 
+      transition: background-color 0.2s, transform 0.2s; 
+    }
+    .social-links a:hover { 
+      background-color: #e2e8f0; 
+      transform: translateY(-2px); 
     }
 
-    /* Esconde barra de rolagem */
-    .carousel-container::-webkit-scrollbar { display: none; }
-    .carousel-container { -ms-overflow-style: none; scrollbar-width: none; }
+    /* Biografia */
+    .bio { font-size: 15px; margin-bottom: 40px; color: #222; }
 
-    /* Card individual do projeto */
+    /* Seções com rolagem */
+    section { padding-top: 20px; margin-bottom: 40px; }
+    .section-title { 
+      font-size: 20px; 
+      font-weight: bold; 
+      border-top: 1px solid #ddd; 
+      padding-top: 20px; 
+      margin-bottom: 25px; 
+    }
+
+    /* LISTA VERTICAL DE PROJETOS */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    /* Card do projeto com efeito interativo */
     .project-card {
-      flex: 0 0 85%;
-      max-width: 400px;
       background-color: #f5f3ef;
       border-radius: 12px;
       padding: 24px;
-      scroll-snap-align: start;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
     }
 
-    .project-card h3 { font-family: sans-serif; font-size: 20px; font-weight: bold; margin-bottom: 12px; color: #111; }
-    .project-card p { font-size: 14px; color: #444; line-height: 1.5; margin-bottom: 20px; }
-    .project-card img { width: 100%; border-radius: 6px; display: block; margin-top: auto; }
+    .project-card h3 { 
+      font-size: 18px; 
+      font-weight: bold; 
+      margin-bottom: 10px; 
+      color: #111; 
+    }
+    .project-card p { 
+      font-size: 14px; 
+      color: #444; 
+      line-height: 1.5; 
+      margin-bottom: 20px; 
+    }
+    .project-card img { width: 100%; border-radius: 8px; display: block; }
   </style>
 </head>
 <body>
 
-  <!-- Menu -->
+  <!-- Menu com links para cada seção da página -->
   <nav>
     <a href="#work">WORK</a>
     <a href="#projects">PROJECTS</a>
     <a href="#about">ABOUT</a>
   </nav>
 
-  <!-- Cabeçalho -->
-  <h1>Luan Perretto</h1>
-  <div class="subtitle">SUA PROFISSÃO | SUA ESPECIALIDADE | SEU FOCO</div>
+  <!-- Cabeçalho Principal -->
+  <h1>LUAN PERRETTO</h1>
+  <div class="subtitle">EDITOR DE GEOGRAFIA | CARTÓGRAFO | INFOGRAFISTA</div>
 
   <!-- Redes Sociais -->
   <div class="social-links">
-    <a href="https://twitter.com/seuusuario" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-    <a href="https://github.com/luanperretto" target="_blank"><i class="fa-brands fa-github"></i></a>
-    <a href="https://linkedin.com/in/seuusuario" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/luanperretto/?skipRedirect=true" target="_blank" title="LinkedIn">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+    <!-- GitHub -->
+    <a href="https://github.com/luanperretto" target="_blank" title="GitHub">
+      <i class="fa-brands fa-github"></i>
+    </a>
+    <!-- Substack -->
+    <a href="https://substack.com/@luanperretto" target="_blank" title="Substack">
+      <i class="fa-solid fa-bookmark"></i>
+    </a>
   </div>
 
-  <!-- Biografia -->
-  <div class="bio">
-    Escreva aqui a sua apresentação. Você pode falar sobre a sua área de atuação, quais ferramentas domina e o que você mais gosta de fazer na sua profissão.
-  </div>
-
-  <h2 class="section-title">Recent works & projects</h2>
-
-  <!-- Container dos cards deslizantes -->
-  <div class="carousel-container">
-
-    <!-- Card 1 -->
-    <div class="project-card">
-      <div>
-        <h3>Nome do Projeto 1</h3>
-        <p>Descrição breve do projeto. Explique o que você fez, as ferramentas utilizadas ou o objetivo do trabalho.</p>
-      </div>
-      <img src="projeto1.png" alt="Preview do projeto 1">
+  <!-- Seção ABOUT -->
+  <section id="about">
+    <div class="bio">
+      Escreva aqui a sua apresentação. Fale sobre seus trabalhos com tecnologia, programação, ilustração e design visual.
     </div>
+  </section>
 
-    <!-- Card 2 -->
-    <div class="project-card">
-      <div>
-        <h3>Nome do Projeto 2</h3>
-        <p>Descrição breve do segundo projeto com detalhes sobre a execução.</p>
-      </div>
-      <img src="projeto2.png" alt="Preview do projeto 2">
+  <!-- Seção WORK & PROJECTS (Vertical) -->
+  <section id="work">
+    <h2 class="section-title">Recent works & projects</h2>
+
+    <div class="projects-list" id="projects">
+
+      <!-- PROJETO 1 -->
+      <a href="LINK_DO_SEU_PROJETO_1" class="project-card" target="_blank">
+        <div>
+          <h3>Nome do Projeto 1</h3>
+          <p>Descrição do seu trabalho aqui. Explique brevemente o conceito do projeto, as ferramentas utilizadas ou o objetivo visual.</p>
+        </div>
+        <img src="projeto1.png" alt="Preview do projeto 1">
+      </a>
+
+      <!-- PROJETO 2 -->
+      <a href="LINK_DO_SEU_PROJETO_2" class="project-card" target="_blank">
+        <div>
+          <h3>Nome do Projeto 2</h3>
+          <p>Descrição do segundo projeto. Ao organizar em lista vertical, o visitante rola a página para baixo vendo cada card inteiro.</p>
+        </div>
+        <img src="projeto2.png" alt="Preview do projeto 2">
+      </a>
+
     </div>
-
-  </div>
+  </section>
 
 </body>
 </html>
