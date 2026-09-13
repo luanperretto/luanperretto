@@ -24,6 +24,8 @@
       max-width: 650px; 
       margin: 0 auto; 
       line-height: 1.6; 
+      /* Espaço extra no fim da página para permitir a rolagem até o topo do título */
+      padding-bottom: 450px; 
     }
     
     /* Menu superior fixo */
@@ -50,9 +52,9 @@
     }
     nav a:hover { color: #000; }
 
-    /* Compensação para a rolagem não ficar escondida atrás do menu fixo */
+    /* Posição exata do travamento da rolagem para cada item */
     #contato, #sobre, #trabalhos {
-      scroll-margin-top: 70px;
+      scroll-margin-top: 90px;
     }
 
     /* Cabeçalho */
