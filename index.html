@@ -14,7 +14,7 @@
       font-family: 'Courier New', Courier, monospace; 
     }
     
-    /* Efeito de rolagem suave quando clica nas abas */
+    /* Efeito de rolagem suave quando clica nas abas e no voltar */
     html { scroll-behavior: smooth; }
 
     body { 
@@ -24,10 +24,14 @@
       max-width: 650px; 
       margin: 0 auto; 
       line-height: 1.6; 
-      /* Espaço no final para rolagem completa até o último item */
-      padding-bottom: 450px; 
+      padding-bottom: 40px; /* Pequeno espaço após o rodapé */
     }
     
+    /* Anchor invisível para o topo */
+    #topo {
+      scroll-margin-top: 20px;
+    }
+
     /* Menu superior fixo */
     nav { 
       display: flex; 
@@ -46,7 +50,7 @@
     nav a { 
       text-decoration: none; 
       color: #555; 
-      font-weight: bold; 
+      font-weight: normal; 
       text-transform: uppercase; 
       transition: color 0.2s; 
     }
@@ -99,7 +103,8 @@
     section { padding-top: 20px; margin-bottom: 40px; }
     .section-title { 
       font-size: 20px; 
-      font-weight: bold; 
+      font-weight: normal; 
+      letter-spacing: 1px;
       border-top: 1px solid #ddd; 
       padding-top: 20px; 
       margin-bottom: 25px; 
@@ -119,21 +124,41 @@
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       display: block;
-      transition: transform 0.2s ease;
     }
 
-    .gallery img:hover {
-      transform: scale(1.01);
+    /* Rodapé / Botão Voltar ao Topo */
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .back-to-top {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: normal;
+      transition: color 0.2s;
+    }
+
+    .back-to-top:hover {
+      color: #000;
     }
   </style>
 </head>
 <body>
 
+  <!-- Ponto de referência para o topo -->
+  <div id="topo"></div>
+
   <!-- Menu ajustado -->
   <nav>
-    <a href="#contato">Contato</a>
-    <a href="#sobre">Sobre</a>
-    <a href="#trabalhos">Trabalhos</a>
+    <a href="#contato">CONTATO</a>
+    <a href="#sobre">SOBRE</a>
+    <a href="#trabalhos">TRABALHOS</a>
   </nav>
 
   <!-- Cabeçalho Principal -->
@@ -165,7 +190,7 @@
 
   <!-- Seção Trabalhos (Sequência de PNGs e GIFs) -->
   <section id="trabalhos">
-    <h2 class="section-title">Trabalhos</h2>
+    <h2 class="section-title">TRABALHOS</h2>
 
     <div class="gallery">
       <img src="imagem1.png" alt="Trabalho 1">
@@ -180,6 +205,11 @@
       <img src="imagem10.png" alt="Trabalho 10">
     </div>
   </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <a href="#topo" class="back-to-top">VOLTAR</a>
+  </footer>
 
 </body>
 </html>
