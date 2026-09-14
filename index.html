@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LUAN PERRETTO | PORTFÓLIO</title>
   
-  <!-- Fonte Roboto do Google Fonts -->
+  <!-- Fonte Roboto do Google Fonts (Pesos: 400 Normal, 500 Medium, 700 Bold) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Ícones das redes sociais (FontAwesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,7 +34,7 @@
       padding-bottom: 40px; 
     }
     
-    /* Anchor para o topo ajustado com o scroll fixo */
+    /* Anchor para o topo */
     #topo {
       scroll-margin-top: 50px;
     }
@@ -46,19 +46,20 @@
       border-bottom: 1px solid #ddd; 
       padding-bottom: 15px; 
       margin-bottom: 40px; 
-      letter-spacing: 1px; 
-      font-size: 14px; 
+      font-size: 15px; 
       position: sticky;
       top: 0;
       background-color: #fff;
       padding-top: 10px;
+      padding-left: 10px;  /* Afasta a palavra Início da borda */
+      padding-right: 10px; /* Afasta a palavra Trabalhos da borda */
       z-index: 10;
     }
     nav a { 
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500; /* Roboto Médio */
       text-decoration: none; 
       color: #555; 
-      font-weight: normal; 
-      text-transform: uppercase; 
       transition: color 0.2s; 
     }
     nav a:hover { color: #000; }
@@ -68,20 +69,21 @@
       scroll-margin-top: 46px;
     }
 
-    /* Cabeçalho - Nome com a fonte Roboto em negrito */
+    /* Cabeçalho - Nome maior em Roboto Bold */
     h1 { 
       font-family: 'Roboto', sans-serif;
-      font-size: 32px; 
+      font-size: 38px; 
       font-weight: 700; 
-      margin-bottom: 10px; 
+      margin-bottom: 8px; 
       color: #111; 
     }
 
-    /* Subtítulo (mesmo tamanho e estilo dos títulos das seções) */
+    /* Subtítulo em Roboto Normal */
     .subtitle { 
-      font-size: 16px; 
-      font-weight: normal;
-      letter-spacing: 1px; 
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px; 
+      font-weight: 400; /* Roboto Normal */
+      letter-spacing: 0.5px; 
       color: #444; 
       margin-bottom: 40px; 
       text-transform: uppercase; 
@@ -121,7 +123,9 @@
     }
 
     .email-text {
-      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
       color: #222;
     }
     .email-text a {
@@ -132,8 +136,13 @@
       text-decoration: underline;
     }
 
-    /* Biografia */
-    .bio { font-size: 15px; color: #222; }
+    /* Biografia em Roboto Normal */
+    .bio { 
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px; 
+      font-weight: 400; /* Roboto Normal */
+      color: #222; 
+    }
 
     /* Galeria de Trabalhos */
     .gallery {
@@ -178,17 +187,17 @@
   <!-- Ponto de referência para o topo -->
   <div id="topo"></div>
 
-  <!-- Menu superior com INÍCIO -->
+  <!-- Menu superior em Roboto Médio -->
   <nav>
-    <a href="#topo">INÍCIO</a>
-    <a href="#contato">CONTATO</a>
-    <a href="#sobre">SOBRE</a>
-    <a href="#trabalhos">TRABALHOS</a>
+    <a href="#topo">Início</a>
+    <a href="#contato">Contato</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#trabalhos">Trabalhos</a>
   </nav>
 
   <!-- Cabeçalho Principal -->
   <h1>Luan Perretto</h1>
-  <div class="subtitle">EDITOR DE GEOGRAFIA | CARTÓGRAFO</div>
+  <div class="subtitle">Editor de Geografia | Cartógrafo</div>
 
   <!-- Seção Contato -->
   <section id="contato">
