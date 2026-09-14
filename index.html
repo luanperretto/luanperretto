@@ -18,7 +18,6 @@
       box-sizing: border-box; 
       margin: 0; 
       padding: 0; 
-      font-family: 'Courier New', Courier, monospace; 
     }
     
     /* Rolagem suave */
@@ -39,10 +38,10 @@
       scroll-margin-top: 50px;
     }
 
-    /* Menu superior fixo */
+    /* Menu superior fixo com maior espaçamento nas laterais */
     nav { 
       display: flex; 
-      justify-content: space-between; 
+      justify-content: space-around; 
       border-bottom: 1px solid #ddd; 
       padding-bottom: 15px; 
       margin-bottom: 40px; 
@@ -51,8 +50,8 @@
       top: 0;
       background-color: #fff;
       padding-top: 10px;
-      padding-left: 10px;  /* Afasta a palavra Início da borda */
-      padding-right: 10px; /* Afasta a palavra Trabalhos da borda */
+      padding-left: 40px;  /* Afasta os links das bordas da coluna */
+      padding-right: 40px; 
       z-index: 10;
     }
     nav a { 
@@ -86,16 +85,14 @@
       letter-spacing: 0.5px; 
       color: #444; 
       margin-bottom: 40px; 
-      text-transform: uppercase; 
     }
     
-    /* Estilo padronizado para os títulos de seção com linha superior */
+    /* Estilo padronizado para os títulos de seção (mesma fonte do menu) */
     section { margin-bottom: 40px; }
     .section-title { 
+      font-family: 'Roboto', sans-serif;
       font-size: 16px; 
-      font-weight: normal; 
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      font-weight: 500; /* Roboto Médio */
       border-top: 1px solid #ddd; 
       padding-top: 20px; 
       margin-bottom: 25px; 
@@ -168,12 +165,11 @@
     }
 
     .back-to-top {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
       text-decoration: none;
       color: #555;
       font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: normal;
       transition: color 0.2s;
     }
 
@@ -201,7 +197,7 @@
 
   <!-- Seção Contato -->
   <section id="contato">
-    <h2 class="section-title">CONTATO</h2>
+    <h2 class="section-title">Contato</h2>
     
     <!-- Redes Sociais -->
     <div class="social-links">
@@ -227,7 +223,7 @@
 
   <!-- Seção Sobre -->
   <section id="sobre">
-    <h2 class="section-title">SOBRE</h2>
+    <h2 class="section-title">Sobre</h2>
     <div class="bio">
       Editor de Geografia e cartógrafo explorando o Brasil e o mundo através de textos mapas e infográficos.
     </div>
@@ -235,7 +231,7 @@
 
   <!-- Seção Trabalhos -->
   <section id="trabalhos">
-    <h2 class="section-title">TRABALHOS</h2>
+    <h2 class="section-title">Trabalhos</h2>
 
     <div class="gallery">
       <img src="imagem1.png" alt="Trabalho 1">
@@ -253,7 +249,7 @@
 
   <!-- Rodapé -->
   <footer>
-    <a href="#topo" class="back-to-top">VOLTAR</a>
+    <a href="#topo" class="back-to-top">Voltar</a>
   </footer>
 
 </body>
