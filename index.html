@@ -504,17 +504,25 @@
         textContainer.appendChild(p);
       });
 
-      // Reseta a rolagem do modal para o topo sempre que abrir
-      const modalCard = document.querySelector('.modal-card');
-      modalCard.scrollTop = 0;
-
+      // Abre o modal primeiro para o elemento aparecer no DOM
       document.getElementById('modalOverlay').classList.add('active');
       document.body.style.overflow = 'hidden';
+
+      // Reseta a rolagem do modal imediatamente e com um leve atraso de segurança
+      const modalCard = document.querySelector('.modal-card');
+      modalCard.scrollTop = 0;
+      setTimeout(() => {
+        modalCard.scrollTop = 0;
+      }, 10);
     }
 
     function closeModal() {
       document.getElementById('modalOverlay').classList.remove('active');
       document.body.style.overflow = 'auto';
+      
+      // Reseta ao fechar também, por garantia
+      const modalCard = document.querySelector('.modal-card');
+      modalCard.scrollTop = 0;
     }
 
     function closeModalOnOverlay(event) {
