@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LUAN PERRETTO | PORTFÓLIO</title>
+  <title>Luan Perretto</title>
   
   <!-- Fonte Roboto do Google Fonts (Pesos: 400 Normal, 500 Medium, 700 Bold) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -157,12 +157,135 @@
       gap: 30px;
     }
 
-    .gallery img {
-      width: 100%;
-      height: auto;
+    /* Container de cada imagem com a marca-d'água Acesse */
+    .work-item {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .work-item img {
+      width: 100%;
+      height: auto;
       display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .work-item:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Marca-d'água / Tag Acesse no canto inferior */
+    .watermark-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background-color: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+      transition: background-color 0.2s, transform 0.2s;
+      user-select: none;
+    }
+
+    .work-item:hover .watermark-badge {
+      background-color: rgba(0, 0, 0, 0.85);
+      transform: scale(1.05);
+    }
+
+    /* Modal / Popup de Zoom */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background-color: #fff;
+      border-radius: 12px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      animation: modalFadeIn 0.25s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: background 0.2s;
+    }
+
+    .modal-close-btn:hover {
+      background: #e2e8f0;
+    }
+
+    .modal-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    /* Margem branca abaixo da imagem com a descrição em Roboto normal */
+    .modal-description {
+      padding: 20px 24px;
+      background-color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400; /* Roboto Normal */
+      font-size: 15px;
+      color: #333;
+      line-height: 1.6;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    .modal-description h3 {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #111;
     }
 
     /* Rodapé ajustado sem folgas excedentes */
@@ -248,16 +371,67 @@
     <h2 class="section-title">Trabalhos</h2>
 
     <div class="gallery">
-      <img src="imagem1.png" alt="Trabalho 1">
-      <img src="imagem2.png" alt="Trabalho 2">
-      <img src="imagem3.png" alt="Trabalho 3">
-      <img src="imagem4.png" alt="Trabalho 4">
-      <img src="imagem5.gif" alt="Trabalho 5">
-      <img src="imagem6.png" alt="Trabalho 6">
-      <img src="imagem7.png" alt="Trabalho 7">
-      <img src="imagem8.png" alt="Trabalho 8">
-      <img src="imagem9.gif" alt="Trabalho 9">
-      <img src="imagem10.png" alt="Trabalho 10">
+
+      <!-- Item 1 -->
+      <div class="work-item" onclick="openModal('imagem1.png', 'As regiões literárias do Brasil', 'Mapa temático explorando a distribuição geográfica das principais correntes e obras literárias pelo território brasileiro.')">
+        <img src="imagem1.png" alt="Trabalho 1">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="work-item" onclick="openModal('imagem2.png', 'Título do Projeto 2', 'Descrição detalhada do projeto 2 com informações cartográficas e metodológicas.')">
+        <img src="imagem2.png" alt="Trabalho 2">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="work-item" onclick="openModal('imagem3.png', 'Título do Projeto 3', 'Descrição detalhada do projeto 3 com dados geográficos e análises espaciais.')">
+        <img src="imagem3.png" alt="Trabalho 3">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="work-item" onclick="openModal('imagem4.png', 'Título do Projeto 4', 'Descrição detalhada do projeto 4 com infografia e contextualização visual.')">
+        <img src="imagem4.png" alt="Trabalho 4">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="work-item" onclick="openModal('imagem5.gif', 'Título do Projeto 5', 'Animação cartográfica mostrando a evolução temporal dos dados.')">
+        <img src="imagem5.gif" alt="Trabalho 5">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="work-item" onclick="openModal('imagem6.png', 'Título do Projeto 6', 'Descrição detalhada do projeto 6.')">
+        <img src="imagem6.png" alt="Trabalho 6">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="work-item" onclick="openModal('imagem7.png', 'Título do Projeto 7', 'Descrição detalhada do projeto 7.')">
+        <img src="imagem7.png" alt="Trabalho 7">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="work-item" onclick="openModal('imagem8.png', 'Título do Projeto 8', 'Descrição detalhada do projeto 8.')">
+        <img src="imagem8.png" alt="Trabalho 8">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
+      <!-- Item 9 -->
+      <div class="work-item" onclick="openModal('imagem9.gif', 'Título do Projeto 9', 'Animação infográfica.')">
+        <img src="imagem9.gif" alt="Trabalho 9">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="work-item" onclick="openModal('imagem10.png', 'Título do Projeto 10', 'Descrição detalhada do projeto 10.')">
+        <img src="imagem10.png" alt="Trabalho 10">
+        <span class="watermark-badge">Acesse</span>
+      </div>
+
     </div>
   </section>
 
@@ -265,6 +439,47 @@
   <footer>
     <a href="#topo" class="back-to-top">Voltar</a>
   </footer>
+
+  <!-- Modal / Overlay de Visualização Ampliada -->
+  <div id="modalOverlay" class="modal-overlay" onclick="closeModalOnOverlay(event)">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+      <img id="modalImg" src="" alt="Ampliação do Trabalho">
+      <div class="modal-description">
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script JavaScript para controlar o Modal -->
+  <script>
+    function openModal(imageSrc, title, text) {
+      document.getElementById('modalImg').src = imageSrc;
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalText').innerText = text;
+      document.getElementById('modalOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden'; // Impede o scroll de fundo enquanto o modal está aberto
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+      document.body.style.overflow = 'auto'; // Reativa o scroll de fundo
+    }
+
+    function closeModalOnOverlay(event) {
+      if (event.target.id === 'modalOverlay') {
+        closeModal();
+      }
+    }
+
+    // Fecha o modal ao pressionar a tecla ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
 
 </body>
 </html>
