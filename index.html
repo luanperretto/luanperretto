@@ -21,21 +21,22 @@
     }
     
     /* Rolagem suave */
-    html { scroll-behavior: smooth; }
+    html { 
+      scroll-behavior: smooth; 
+    }
 
     body { 
       color: #111; 
       background-color: #fff; 
-      padding: 20px; 
+      padding: 0 20px; 
       max-width: 650px; 
       margin: 0 auto; 
       line-height: 1.6; 
-      padding-bottom: 40px; 
     }
     
-    /* Anchor para o topo */
+    /* Anchor para o topo fixo */
     #topo {
-      scroll-margin-top: 60px;
+      scroll-margin-top: 10px;
     }
 
     /* Menu superior fixo com botões/caixinhas */
@@ -44,18 +45,19 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
       border-bottom: 1px solid #ddd; 
+      padding-top: 20px;
       padding-bottom: 15px; 
       margin-bottom: 40px; 
       position: sticky;
       top: 0;
       background-color: #fff;
-      padding-top: 10px;
       z-index: 10;
     }
+
     nav a { 
       font-family: 'Roboto', sans-serif;
-      font-weight: 500; /* Roboto Médio */
-      font-size: 14px;
+      font-weight: 500; /* Roboto Seminegrito */
+      font-size: 15px;
       text-decoration: none; 
       color: #333; 
       background-color: #f4f5f7;
@@ -69,35 +71,36 @@
       color: #000; 
     }
 
-    /* Travamento do scroll em relação ao menu fixo */
+    /* Ajuste fino da parada do scroll nas seções */
     #contato, #sobre, #trabalhos {
-      scroll-margin-top: 55px;
+      scroll-margin-top: 75px;
     }
 
-    /* Cabeçalho - Nome maior em Roboto Bold */
+    /* Cabeçalho Principal */
     h1 { 
       font-family: 'Roboto', sans-serif;
-      font-size: 38px; 
+      font-size: 46px; 
       font-weight: 700; 
-      margin-bottom: 8px; 
+      margin-bottom: 6px; 
       color: #111; 
+      line-height: 1.2;
     }
 
     /* Subtítulo em Roboto Normal */
     .subtitle { 
       font-family: 'Roboto', sans-serif;
-      font-size: 15px; 
-      font-weight: 400; /* Roboto Normal */
+      font-size: 18px; 
+      font-weight: 400; 
       letter-spacing: 0.5px; 
       color: #444; 
       margin-bottom: 40px; 
     }
     
-    /* Estilo padronizado para os títulos de seção maiores e em Roboto Seminegrito */
+    /* Estilo das Seções */
     section { margin-bottom: 40px; }
     .section-title { 
       font-family: 'Roboto', sans-serif;
-      font-size: 26px; /* Aumentado: maior que o menu e menor que o nome */
+      font-size: 26px; 
       font-weight: 500; /* Roboto Seminegrito */
       border-top: 1px solid #ddd; 
       padding-top: 20px; 
@@ -143,7 +146,7 @@
     .bio { 
       font-family: 'Roboto', sans-serif;
       font-size: 16px; 
-      font-weight: 400; /* Roboto Normal */
+      font-weight: 400; 
       color: #222; 
     }
 
@@ -162,24 +165,29 @@
       display: block;
     }
 
-    /* Rodapé / Botão Voltar ao Topo */
+    /* Rodapé ajustado sem folgas excedentes */
     footer {
-      margin-top: 50px;
-      padding-top: 20px;
+      margin-top: 40px;
+      padding: 20px 0 30px 0;
       border-top: 1px solid #ddd;
       text-align: center;
     }
 
     .back-to-top {
+      display: inline-block;
       font-family: 'Roboto', sans-serif;
-      font-weight: 500;
+      font-weight: 500; /* Roboto Seminegrito */
+      font-size: 15px;
       text-decoration: none;
-      color: #555;
-      font-size: 14px;
-      transition: color 0.2s;
+      color: #333;
+      background-color: #f4f5f7;
+      padding: 10px 30px;
+      border-radius: 6px;
+      transition: background-color 0.2s, color 0.2s;
     }
 
     .back-to-top:hover {
+      background-color: #e2e8f0;
       color: #000;
     }
   </style>
@@ -189,7 +197,7 @@
   <!-- Ponto de referência para o topo -->
   <div id="topo"></div>
 
-  <!-- Menu superior com retângulos / caixinhas -->
+  <!-- Menu superior com caixinhas -->
   <nav>
     <a href="#topo">Início</a>
     <a href="#contato">Contato</a>
