@@ -504,6 +504,10 @@
         textContainer.appendChild(p);
       });
 
+      // Reseta a rolagem do modal para o topo sempre que abrir
+      const modalCard = document.querySelector('.modal-card');
+      modalCard.scrollTop = 0;
+
       document.getElementById('modalOverlay').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
