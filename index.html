@@ -35,37 +35,43 @@
     
     /* Anchor para o topo */
     #topo {
-      scroll-margin-top: 50px;
+      scroll-margin-top: 60px;
     }
 
-    /* Menu superior fixo com maior espaçamento nas laterais */
+    /* Menu superior fixo com botões/caixinhas */
     nav { 
-      display: flex; 
-      justify-content: space-around; 
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
       border-bottom: 1px solid #ddd; 
       padding-bottom: 15px; 
       margin-bottom: 40px; 
-      font-size: 15px; 
       position: sticky;
       top: 0;
       background-color: #fff;
       padding-top: 10px;
-      padding-left: 40px;  /* Afasta os links das bordas da coluna */
-      padding-right: 40px; 
       z-index: 10;
     }
     nav a { 
       font-family: 'Roboto', sans-serif;
       font-weight: 500; /* Roboto Médio */
+      font-size: 14px;
       text-decoration: none; 
-      color: #555; 
-      transition: color 0.2s; 
+      color: #333; 
+      background-color: #f4f5f7;
+      padding: 8px 0;
+      text-align: center;
+      border-radius: 6px;
+      transition: background-color 0.2s, color 0.2s; 
     }
-    nav a:hover { color: #000; }
+    nav a:hover { 
+      background-color: #e2e8f0; 
+      color: #000; 
+    }
 
     /* Travamento do scroll em relação ao menu fixo */
     #contato, #sobre, #trabalhos {
-      scroll-margin-top: 46px;
+      scroll-margin-top: 55px;
     }
 
     /* Cabeçalho - Nome maior em Roboto Bold */
@@ -87,12 +93,12 @@
       margin-bottom: 40px; 
     }
     
-    /* Estilo padronizado para os títulos de seção (mesma fonte do menu) */
+    /* Estilo padronizado para os títulos de seção maiores e em Roboto Seminegrito */
     section { margin-bottom: 40px; }
     .section-title { 
       font-family: 'Roboto', sans-serif;
-      font-size: 16px; 
-      font-weight: 500; /* Roboto Médio */
+      font-size: 26px; /* Aumentado: maior que o menu e menor que o nome */
+      font-weight: 500; /* Roboto Seminegrito */
       border-top: 1px solid #ddd; 
       padding-top: 20px; 
       margin-bottom: 25px; 
@@ -183,7 +189,7 @@
   <!-- Ponto de referência para o topo -->
   <div id="topo"></div>
 
-  <!-- Menu superior em Roboto Médio -->
+  <!-- Menu superior com retângulos / caixinhas -->
   <nav>
     <a href="#topo">Início</a>
     <a href="#contato">Contato</a>
