@@ -306,7 +306,6 @@
       align-items: center;
       padding: 20px;
       backdrop-filter: blur(4px);
-      /* Fade suave do fundo */
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
@@ -329,7 +328,6 @@
       flex-direction: column;
       position: relative;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      /* Animação suave de entrada (fade + leve escala) */
       opacity: 0;
       transform: scale(0.92);
       transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
@@ -812,4 +810,14 @@
 
         const activeEl = document.activeElement;
         if (activeEl && activeEl.tagName === 'A' && 
-            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top')))
+            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top'))) {
+          if (!activeEl.contains(e.target)) {
+            activeEl.blur();
+          }
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
