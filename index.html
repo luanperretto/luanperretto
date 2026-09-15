@@ -54,7 +54,7 @@
       scroll-margin-top: 10px;
     }
 
-    /* Menu superior fixo centralizado com espaçamento lateral nas pontas e botões separados */
+    /* Menu superior fixo centralizado */
     nav { 
       display: flex;
       justify-content: center;
@@ -115,10 +115,10 @@
     /* Subtítulo em Work Sans Light */
     .subtitle { 
       font-family: 'Work Sans', sans-serif;
-      font-size: 20px; 
+      font-size: 17px; 
       font-weight: 300; 
       color: #555; 
-      margin-bottom: 24px; 
+      margin-bottom: 20px; 
     }
     
     /* Estilo das Seções */
@@ -136,11 +136,11 @@
       color: #111;
     }
 
-    /* Redes Sociais com espaçamento personalizado */
+    /* Redes Sociais */
     .social-links { 
       display: flex; 
       gap: 12px; 
-      margin-bottom: 24px; 
+      margin-bottom: 10px; 
     }
     .social-links a { 
       display: flex; 
@@ -160,13 +160,13 @@
       transform: translateY(-2px); 
     }
 
-    /* E-mail em Work Sans Light com margem inferior para a seção */
+    /* E-mail em Work Sans Light */
     .email-text {
       font-family: 'Work Sans', sans-serif;
       font-weight: 300;
-      font-size: 19px;
+      font-size: 16px;
       color: #222;
-      margin-bottom: 40px;
+      margin-bottom: 2px;
     }
     .email-text a {
       color: #222;
@@ -176,10 +176,26 @@
       text-decoration: underline;
     }
 
-    /* Biografia em Work Sans Light (19px) */
+    /* Telefone logo abaixo do e-mail */
+    .phone-text {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      color: #222;
+      margin-bottom: 30px;
+    }
+    .phone-text a {
+      color: #222;
+      text-decoration: none;
+    }
+    .phone-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* Biografia em Work Sans Light */
     .bio { 
       font-family: 'Work Sans', sans-serif;
-      font-size: 19px; 
+      font-size: 16px; 
       font-weight: 300; 
       color: #222; 
     }
@@ -238,11 +254,11 @@
       transform: scale(1);
     }
 
-    /* Ícone de expansão minimalista com a mesma espessura fina */
+    /* Ícone de expansão - AUMENTADO */
     .expand-icon-container {
       position: relative;
-      width: 12px;
-      height: 12px;
+      width: 18px;
+      height: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -252,8 +268,8 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 5px;
-      height: 5px;
+      width: 8px;
+      height: 8px;
       border-top: 1px solid #333;
       border-right: 1px solid #333;
     }
@@ -262,13 +278,13 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 5px;
-      height: 5px;
+      width: 8px;
+      height: 8px;
       border-bottom: 1px solid #333;
       border-left: 1px solid #333;
     }
 
-    /* Modal / Overlay de Visualização Ampliada com fundo cinza translúcido */
+    /* Modal / Overlay de Visualização Ampliada */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -307,7 +323,7 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* Botão de fechar (X) estilizado em bolinha com o mesmo efeito e espessura fina */
+    /* Botão de fechar (X) - SEM mudança de cor no hover */
     .modal-close-btn {
       position: absolute;
       top: 14px;
@@ -323,15 +339,9 @@
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       z-index: 10;
-      transition: background-color 0.2s, transform 0.2s;
     }
 
-    .modal-close-btn:hover {
-      background-color: #e2e8f0;
-      transform: translateY(-2px);
-    }
-
-    /* Ícone X customizado com a mesma espessura fina do símbolo de expansão */
+    /* Ícone X customizado */
     .close-icon-container {
       position: relative;
       width: 12px;
@@ -357,7 +367,7 @@
       transform: rotate(-45deg);
     }
 
-    /* Container interno com scroll próprio para respeitar as bordas arredondadas */
+    /* Container interno com scroll próprio */
     .modal-scroll-content {
       overflow-y: auto;
       max-height: 90vh;
@@ -370,13 +380,13 @@
       display: block;
     }
 
-    /* Descrição do modal em Work Sans Light (19px) */
+    /* Descrição do modal em Work Sans Light */
     .modal-description {
       padding: 20px 24px;
       background-color: #fff;
       font-family: 'Work Sans', sans-serif;
       font-weight: 300;
-      font-size: 19px;
+      font-size: 16px;
       color: #222;
       line-height: 1.6;
     }
@@ -433,6 +443,11 @@
   <!-- E-mail -->
   <div class="email-text">
     <a href="mailto:luan.perretto@gmail.com">luan.perretto@gmail.com</a>
+  </div>
+
+  <!-- Telefone (linha abaixo do e-mail) -->
+  <div class="phone-text">
+    <a href="tel:+5541995015111">+55 41 99501-5111</a>
   </div>
 
   <!-- Seção Sobre -->
