@@ -56,14 +56,14 @@
       scroll-margin-top: 10px;
     }
 
-    /* Menu superior fixo centralizado - SEM LINHA INFERIOR */
+    /* Menu superior fixo centralizado - ALTURA REDUZIDA */
     nav { 
       display: flex;
       justify-content: center;
       gap: 45px;
-      padding-top: 20px;
-      padding-bottom: 15px; 
-      margin-bottom: 30px; 
+      padding-top: 12px;
+      padding-bottom: 12px; 
+      margin-bottom: 25px; 
       position: sticky;
       top: 0;
       background-color: #fff;
@@ -113,7 +113,7 @@
 
     /* Ajuste fino da parada do scroll nas seções */
     #sobre, #projetos {
-      scroll-margin-top: 75px;
+      scroll-margin-top: 60px;
     }
 
     /* Cabeçalho Principal com Oswald Semibold */
@@ -291,7 +291,6 @@
 
     /* ============================================
        MODAL / OVERLAY DE VISUALIZAÇÃO AMPLIADA
-       Animação suave de abertura e fechamento
        ============================================ */
     .modal-overlay {
       display: flex;
@@ -310,6 +309,8 @@
       visibility: hidden;
       transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                   visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
     }
 
     .modal-overlay.active {
@@ -332,6 +333,7 @@
       transform: scale(0.92);
       transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
                   transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      min-height: 0;
     }
 
     .modal-overlay.active .modal-card {
@@ -390,6 +392,8 @@
       overflow-y: auto;
       max-height: 90vh;
       border-radius: 16px;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
 
     .modal-card img {
@@ -428,25 +432,30 @@
        AJUSTE RESPONSIVO PARA CELULAR
        ============================================ */
     @media (max-width: 500px) {
+      /* CABEÇALHO: botões alinhados às extremidades, altura equilibrada */
       nav {
         justify-content: space-between;
         gap: 0;
-        padding-left: 12px;
-        padding-right: 12px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
       }
       nav a, .back-to-top {
-        padding: 8px 10px;
+        padding: 8px 8px;
         font-size: 17px;
       }
       nav a:first-child {
         margin-right: 0;
+        margin-left: 0;
       }
       nav a:last-child {
         margin-left: 0;
+        margin-right: 0;
       }
       /* Compensa a altura real do cabeçalho no celular */
       #sobre, #projetos {
-        scroll-margin-top: 65px;
+        scroll-margin-top: 55px;
       }
 
       /* MESMO EFEITO HOVER DO DESKTOP APLICADO NO TOQUE */
@@ -457,6 +466,32 @@
         background-color: #fff;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         color: #000;
+      }
+
+      /* MODAL NO CELULAR: sem faixa branca lateral, scroll interno */
+      .modal-overlay {
+        padding: 0;
+        align-items: center;
+      }
+      .modal-card {
+        max-height: 100vh;
+        max-width: 100%;
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        margin: 0;
+      }
+      .modal-scroll-content {
+        max-height: 100vh;
+        border-radius: 0;
+      }
+      .modal-card img {
+        width: 100%;
+        display: block;
+      }
+      .modal-close-btn {
+        top: 14px;
+        right: 14px;
       }
     }
   </style>
@@ -808,16 +843,4 @@
       document.addEventListener('touchstart', function(e) {
         if (!('ontouchstart' in window)) return;
 
-        const activeEl = document.activeElement;
-        if (activeEl && activeEl.tagName === 'A' && 
-            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top'))) {
-          if (!activeEl.contains(e.target)) {
-            activeEl.blur();
-          }
-        }
-      }, { passive: true });
-    })();
-  </script>
-
-</body>
-</html>
+        const active
