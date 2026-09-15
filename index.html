@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luan Perretto</title>
   
-  <!-- Fontes do Google Fonts (Oswald e PT Serif) -->
+  <!-- Fontes do Google Fonts (Oswald e Work Sans Light) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
 
   <!-- Ícones das redes sociais e FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -54,11 +54,11 @@
       scroll-margin-top: 10px;
     }
 
-    /* Menu superior fixo centralizado com espaçamento lateral nas pontas */
+    /* Menu superior fixo centralizado com espaçamento lateral nas pontas e botões separados */
     nav { 
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 20px;
       border-bottom: 1px solid #ddd; 
       padding-top: 20px;
       padding-bottom: 15px; 
@@ -112,13 +112,13 @@
       letter-spacing: 0.5px;
     }
 
-    /* Subtítulo em PT Serif com espaçamento padronizado */
+    /* Subtítulo em Work Sans Light */
     .subtitle { 
-      font-family: 'PT Serif', serif;
+      font-family: 'Work Sans', sans-serif;
       font-size: 20px; 
-      font-weight: 400; 
+      font-weight: 300; 
       color: #555; 
-      margin-bottom: 4px; 
+      margin-bottom: 24px; 
     }
     
     /* Estilo das Seções */
@@ -136,11 +136,11 @@
       color: #111;
     }
 
-    /* Redes Sociais com espaçamento idêntico (4px) */
+    /* Redes Sociais com espaçamento personalizado */
     .social-links { 
       display: flex; 
       gap: 12px; 
-      margin-bottom: 4px; 
+      margin-bottom: 24px; 
     }
     .social-links a { 
       display: flex; 
@@ -160,13 +160,13 @@
       transform: translateY(-2px); 
     }
 
-    /* E-mail em PT Serif com margem inferior padronizada (4px) */
+    /* E-mail em Work Sans Light com margem inferior para a seção */
     .email-text {
-      font-family: 'PT Serif', serif;
-      font-weight: 400;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
       font-size: 19px;
       color: #222;
-      margin-bottom: 4px;
+      margin-bottom: 40px;
     }
     .email-text a {
       color: #222;
@@ -176,20 +176,11 @@
       text-decoration: underline;
     }
 
-    /* Localização abaixo do e-mail com margem maior para separar do separador/seção */
-    .location-text {
-      font-family: 'PT Serif', serif;
-      font-weight: 400;
-      font-size: 19px;
-      color: #555;
-      margin-bottom: 40px;
-    }
-
-    /* Biografia em PT Serif (19px) */
+    /* Biografia em Work Sans Light (19px) */
     .bio { 
-      font-family: 'PT Serif', serif;
+      font-family: 'Work Sans', sans-serif;
       font-size: 19px; 
-      font-weight: 400; 
+      font-weight: 300; 
       color: #222; 
     }
 
@@ -247,7 +238,7 @@
       transform: scale(1);
     }
 
-    /* Ícone de expansão minimalista com a mesma espessura do botão X */
+    /* Ícone de expansão minimalista com a mesma espessura fina */
     .expand-icon-container {
       position: relative;
       width: 12px;
@@ -263,8 +254,8 @@
       right: 0;
       width: 5px;
       height: 5px;
-      border-top: 2px solid #333;
-      border-right: 2px solid #333;
+      border-top: 1px solid #333;
+      border-right: 1px solid #333;
     }
 
     .expand-arrow-bottom-left {
@@ -273,8 +264,8 @@
       left: 0;
       width: 5px;
       height: 5px;
-      border-bottom: 2px solid #333;
-      border-left: 2px solid #333;
+      border-bottom: 1px solid #333;
+      border-left: 1px solid #333;
     }
 
     /* Modal / Overlay de Visualização Ampliada com fundo cinza translúcido */
@@ -316,28 +307,54 @@
       to { opacity: 1; transform: scale(1); }
     }
 
+    /* Botão de fechar (X) estilizado em bolinha com o mesmo efeito e espessura fina */
     .modal-close-btn {
       position: absolute;
-      top: 12px;
-      right: 16px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-      cursor: pointer;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
       background: rgba(255, 255, 255, 0.9);
       border: none;
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       z-index: 10;
-      transition: background 0.2s;
+      transition: background-color 0.2s, transform 0.2s;
     }
 
     .modal-close-btn:hover {
-      background: #e2e8f0;
+      background-color: #e2e8f0;
+      transform: translateY(-2px);
+    }
+
+    /* Ícone X customizado com a mesma espessura fina do símbolo de expansão */
+    .close-icon-container {
+      position: relative;
+      width: 12px;
+      height: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-line-1 {
+      position: absolute;
+      width: 14px;
+      height: 1px;
+      background-color: #333;
+      transform: rotate(45deg);
+    }
+
+    .close-line-2 {
+      position: absolute;
+      width: 14px;
+      height: 1px;
+      background-color: #333;
+      transform: rotate(-45deg);
     }
 
     /* Container interno com scroll próprio para respeitar as bordas arredondadas */
@@ -353,12 +370,12 @@
       display: block;
     }
 
-    /* Descrição do modal em PT Serif (19px) */
+    /* Descrição do modal em Work Sans Light (19px) */
     .modal-description {
       padding: 20px 24px;
       background-color: #fff;
-      font-family: 'PT Serif', serif;
-      font-weight: 400;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 300;
       font-size: 19px;
       color: #222;
       line-height: 1.6;
@@ -416,11 +433,6 @@
   <!-- E-mail -->
   <div class="email-text">
     <a href="mailto:luan.perretto@gmail.com">luan.perretto@gmail.com</a>
-  </div>
-
-  <!-- Localização -->
-  <div class="location-text">
-    Curitiba | Brasil
   </div>
 
   <!-- Seção Sobre -->
@@ -609,7 +621,12 @@
   <!-- Modal / Overlay de Visualização Ampliada -->
   <div id="modalOverlay" class="modal-overlay" onclick="closeModalOnOverlay(event)">
     <div class="modal-card">
-      <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+      <button class="modal-close-btn" onclick="closeModal()">
+        <div class="close-icon-container">
+          <div class="close-line-1"></div>
+          <div class="close-line-2"></div>
+        </div>
+      </button>
       <div class="modal-scroll-content">
         <img id="modalImg" src="" alt="Ampliação do Projeto">
         <div class="modal-description">
