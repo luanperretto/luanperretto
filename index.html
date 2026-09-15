@@ -766,4 +766,24 @@
 
         const activeEl = document.activeElement;
         if (activeEl && activeEl.tagName === 'A' && 
-            (activeEl.closest('nav
+            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top'))) {
+          activeEl.blur();
+        }
+      }, { passive: true });
+
+      document.addEventListener('touchstart', function(e) {
+        if (!('ontouchstart' in window)) return;
+
+        const activeEl = document.activeElement;
+        if (activeEl && activeEl.tagName === 'A' && 
+            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top'))) {
+          if (!activeEl.contains(e.target)) {
+            activeEl.blur();
+          }
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
