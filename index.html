@@ -54,11 +54,11 @@
       scroll-margin-top: 10px;
     }
 
-    /* Menu superior fixo centralizado */
+    /* Menu superior fixo centralizado - BOTÕES MAIS AFASTADOS */
     nav { 
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 45px;
       border-bottom: 1px solid #ddd; 
       padding-top: 20px;
       padding-bottom: 15px; 
@@ -136,23 +136,23 @@
       color: #111;
     }
 
-    /* Redes Sociais */
+    /* Redes Sociais - BOLINHAS MENORES */
     .social-links { 
       display: flex; 
-      gap: 12px; 
+      gap: 10px; 
       margin-bottom: 10px; 
     }
     .social-links a { 
       display: flex; 
       align-items: center; 
       justify-content: center; 
-      width: 40px; 
-      height: 40px; 
+      width: 32px; 
+      height: 32px; 
       background-color: #f4f5f7; 
       border-radius: 50%; 
       color: #000; 
       text-decoration: none; 
-      font-size: 18px; 
+      font-size: 15px; 
       transition: background-color 0.2s, transform 0.2s; 
     }
     .social-links a:hover { 
@@ -230,7 +230,7 @@
       transform: scale(1.02);
     }
 
-    /* Indicador circular no canto superior direito */
+    /* Indicador circular no canto superior direito - MESMO TAMANHO DO BOTÃO X */
     .work-overlay-icon {
       position: absolute;
       top: 14px;
@@ -254,11 +254,11 @@
       transform: scale(1);
     }
 
-    /* Ícone de expansão - AUMENTADO */
+    /* Ícone de expansão - MESMO TAMANHO DO X */
     .expand-icon-container {
       position: relative;
-      width: 18px;
-      height: 18px;
+      width: 12px;
+      height: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -268,8 +268,8 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 8px;
-      height: 8px;
+      width: 5px;
+      height: 5px;
       border-top: 1px solid #333;
       border-right: 1px solid #333;
     }
@@ -278,8 +278,8 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 8px;
-      height: 8px;
+      width: 5px;
+      height: 5px;
       border-bottom: 1px solid #333;
       border-left: 1px solid #333;
     }
@@ -323,7 +323,7 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* Botão de fechar (X) - SEM mudança de cor no hover */
+    /* Botão de fechar (X) - COM MESMO COMPORTAMENTO DO ÍCONE DE EXPANSÃO */
     .modal-close-btn {
       position: absolute;
       top: 14px;
@@ -339,9 +339,11 @@
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       z-index: 10;
+      opacity: 1;
+      transition: background-color 0.2s, transform 0.2s;
     }
 
-    /* Ícone X customizado */
+    /* Ícone X customizado - MESMO TAMANHO DO ÍCONE DE EXPANSÃO */
     .close-icon-container {
       position: relative;
       width: 12px;
@@ -353,7 +355,7 @@
 
     .close-line-1 {
       position: absolute;
-      width: 14px;
+      width: 12px;
       height: 1px;
       background-color: #333;
       transform: rotate(45deg);
@@ -361,7 +363,7 @@
 
     .close-line-2 {
       position: absolute;
-      width: 14px;
+      width: 12px;
       height: 1px;
       background-color: #333;
       transform: rotate(-45deg);
