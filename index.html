@@ -413,6 +413,14 @@
         max-height: 100vh;
         border-radius: 0;
         background-color: #fff;
+        /* Esconde a scrollbar no celular mantendo a rolagem com o dedo */
+        scrollbar-width: none;        /* Firefox */
+        -ms-overflow-style: none;     /* IE/Edge antigo */
+      }
+      .modal-scroll-content::-webkit-scrollbar {
+        display: none;                /* Chrome, Safari, Edge */
+        width: 0;
+        height: 0;
       }
       .modal-card img {
         width: 100%;
