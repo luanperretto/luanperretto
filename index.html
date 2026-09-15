@@ -20,22 +20,11 @@
       padding: 0; 
     }
     
-    /* Estilização da barra de rolagem lateral (Scrollbar moderna) */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #94a3b8;
-    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f1f1; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     
-    /* Rolagem suave + bloqueia pull-to-refresh nativo do navegador */
     html { 
       scroll-behavior: smooth; 
       overscroll-behavior-y: contain;
@@ -51,16 +40,13 @@
       overscroll-behavior-y: contain;
     }
     
-    /* Anchor para o topo fixo */
-    #topo {
-      scroll-margin-top: 10px;
-    }
+    #topo { scroll-margin-top: 10px; }
 
-    /* Menu superior fixo centralizado - ALTURA REDUZIDA */
+    /* Menu superior fixo - BOTÕES NAS EXTREMIDADES */
     nav { 
       display: flex;
-      justify-content: center;
-      gap: 45px;
+      justify-content: space-between;
+      gap: 0;
       padding-top: 12px;
       padding-bottom: 12px; 
       margin-bottom: 25px; 
@@ -68,18 +54,13 @@
       top: 0;
       background-color: #fff;
       z-index: 10;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 0;
+      padding-right: 0;
     }
 
-    /* Afasta INÍCIO e PROJETOS do SOBRE - 35px no desktop */
-    nav a:first-child {
-      margin-right: 35px;
-    }
-
-    nav a:last-child {
-      margin-left: 35px;
-    }
+    /* Botões das pontas sem margem extra */
+    nav a:first-child { margin-right: 0; }
+    nav a:last-child { margin-left: 0; }
 
     nav a, .back-to-top { 
       font-family: 'Oswald', sans-serif;
@@ -106,17 +87,12 @@
       box-shadow: none;
     }
 
-    /* Remove a "piscada" escura automática do celular ao tocar */
     nav a, .back-to-top, .social-links a {
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* Ajuste fino da parada do scroll nas seções */
-    #sobre, #projetos {
-      scroll-margin-top: 60px;
-    }
+    #sobre, #projetos { scroll-margin-top: 60px; }
 
-    /* Cabeçalho Principal com Oswald Semibold */
     h1 { 
       font-family: 'Oswald', sans-serif;
       font-size: 56px; 
@@ -127,7 +103,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Subtítulo em Work Sans Light */
     .subtitle { 
       font-family: 'Work Sans', sans-serif;
       font-size: 17px; 
@@ -136,10 +111,8 @@
       margin-bottom: 20px; 
     }
     
-    /* Estilo das Seções */
     section { margin-bottom: 40px; }
     
-    /* Títulos das Seções com Oswald Light - SEM LINHA SUPERIOR */
     .section-title { 
       font-family: 'Oswald', sans-serif;
       font-size: 26px; 
@@ -149,7 +122,6 @@
       color: #111;
     }
 
-    /* Redes Sociais - BOLINHAS MENORES */
     .social-links { 
       display: flex; 
       gap: 10px; 
@@ -173,7 +145,6 @@
       transform: translateY(-2px); 
     }
 
-    /* E-mail em Work Sans Light */
     .email-text {
       font-family: 'Work Sans', sans-serif;
       font-weight: 300;
@@ -181,15 +152,9 @@
       color: #222;
       margin-bottom: 2px;
     }
-    .email-text a {
-      color: #222;
-      text-decoration: none;
-    }
-    .email-text a:hover {
-      text-decoration: underline;
-    }
+    .email-text a { color: #222; text-decoration: none; }
+    .email-text a:hover { text-decoration: underline; }
 
-    /* Telefone logo abaixo do e-mail */
     .phone-text {
       font-family: 'Work Sans', sans-serif;
       font-weight: 300;
@@ -197,15 +162,9 @@
       color: #222;
       margin-bottom: 30px;
     }
-    .phone-text a {
-      color: #222;
-      text-decoration: none;
-    }
-    .phone-text a:hover {
-      text-decoration: underline;
-    }
+    .phone-text a { color: #222; text-decoration: none; }
+    .phone-text a:hover { text-decoration: underline; }
 
-    /* Biografia em Work Sans Light */
     .bio { 
       font-family: 'Work Sans', sans-serif;
       font-size: 16px; 
@@ -213,17 +172,13 @@
       color: #222; 
     }
 
-    /* Galeria de Projetos */
     .gallery {
       display: flex;
       flex-direction: column;
       gap: 35px;
     }
 
-    /* Container de cada imagem */
-    .work-item {
-      cursor: pointer;
-    }
+    .work-item { cursor: pointer; }
 
     .work-image-wrapper {
       position: relative;
@@ -239,11 +194,8 @@
       transition: transform 0.3s ease;
     }
 
-    .work-item:hover img {
-      transform: scale(1.02);
-    }
+    .work-item:hover img { transform: scale(1.02); }
 
-    /* Indicador circular SEMPRE VISÍVEL no canto superior direito */
     .work-overlay-icon {
       position: absolute;
       top: 14px;
@@ -259,7 +211,6 @@
       z-index: 2;
     }
 
-    /* Ícone de expansão - MESMO TAMANHO DO X */
     .expand-icon-container {
       position: relative;
       width: 12px;
@@ -289,9 +240,7 @@
       border-left: 1px solid #333;
     }
 
-    /* ============================================
-       MODAL / OVERLAY DE VISUALIZAÇÃO AMPLIADA
-       ============================================ */
+    /* MODAL */
     .modal-overlay {
       display: flex;
       position: fixed;
@@ -310,7 +259,6 @@
       transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                   visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       overscroll-behavior: contain;
-      -webkit-overflow-scrolling: touch;
     }
 
     .modal-overlay.active {
@@ -341,7 +289,6 @@
       transform: scale(1);
     }
 
-    /* Botão de fechar (X) */
     .modal-close-btn {
       position: absolute;
       top: 14px;
@@ -357,11 +304,9 @@
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       z-index: 10;
-      opacity: 1;
       transition: background-color 0.2s, transform 0.2s;
     }
 
-    /* Ícone X customizado - MESMO TAMANHO DO ÍCONE DE EXPANSÃO */
     .close-icon-container {
       position: relative;
       width: 12px;
@@ -387,7 +332,6 @@
       transform: rotate(-45deg);
     }
 
-    /* Container interno com scroll próprio */
     .modal-scroll-content {
       overflow-y: auto;
       max-height: 90vh;
@@ -402,7 +346,6 @@
       display: block;
     }
 
-    /* Descrição do modal em Work Sans Light */
     .modal-description {
       padding: 20px 24px;
       background-color: #fff;
@@ -413,15 +356,9 @@
       line-height: 1.6;
     }
 
-    .modal-description p {
-      margin-bottom: 12px;
-    }
+    .modal-description p { margin-bottom: 12px; }
+    .modal-description p:last-child { margin-bottom: 0; }
 
-    .modal-description p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Rodapé - SEM LINHA SUPERIOR */
     footer {
       margin-top: 40px;
       padding: 20px 0 30px 0;
@@ -432,7 +369,6 @@
        AJUSTE RESPONSIVO PARA CELULAR
        ============================================ */
     @media (max-width: 500px) {
-      /* CABEÇALHO: botões alinhados às extremidades, altura equilibrada */
       nav {
         justify-content: space-between;
         gap: 0;
@@ -442,7 +378,7 @@
         padding-bottom: 10px;
       }
       nav a, .back-to-top {
-        padding: 8px 8px;
+        padding: 6px 8px;
         font-size: 17px;
       }
       nav a:first-child {
@@ -453,12 +389,10 @@
         margin-left: 0;
         margin-right: 0;
       }
-      /* Compensa a altura real do cabeçalho no celular */
       #sobre, #projetos {
-        scroll-margin-top: 55px;
+        scroll-margin-top: 50px;
       }
 
-      /* MESMO EFEITO HOVER DO DESKTOP APLICADO NO TOQUE */
       nav a:active,
       nav a:focus,
       .back-to-top:active,
@@ -468,10 +402,10 @@
         color: #000;
       }
 
-      /* MODAL NO CELULAR: sem faixa branca lateral, scroll interno */
+      /* MODAL NO CELULAR: TELA CHEIA, SEM FAIXA BRANCA LATERAL */
       .modal-overlay {
         padding: 0;
-        align-items: center;
+        align-items: stretch;
       }
       .modal-card {
         max-height: 100vh;
@@ -489,56 +423,45 @@
         width: 100%;
         display: block;
       }
-      .modal-close-btn {
-        top: 14px;
-        right: 14px;
+      .modal-description {
+        padding: 20px 16px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Ponto de referência para o topo -->
   <div id="topo"></div>
 
-  <!-- Menu superior -->
   <nav>
     <a href="#topo">INÍCIO</a>
     <a href="#sobre">SOBRE</a>
     <a href="#projetos">PROJETOS</a>
   </nav>
 
-  <!-- Cabeçalho Principal -->
   <h1>Luan Perretto</h1>
   <div class="subtitle">Editor de Geografia | Cartógrafo</div>
 
-  <!-- Redes Sociais -->
   <div class="social-links">
-    <!-- LinkedIn -->
     <a href="https://www.linkedin.com/in/luanperretto/?skipRedirect=true" target="_blank" title="LinkedIn">
       <i class="fa-brands fa-linkedin-in"></i>
     </a>
-    <!-- GitHub -->
     <a href="https://github.com/luanperretto" target="_blank" title="GitHub">
       <i class="fa-brands fa-github"></i>
     </a>
-    <!-- Substack -->
     <a href="https://substack.com/@luanperretto" target="_blank" title="Substack">
       <i class="fa-solid fa-bookmark"></i>
     </a>
   </div>
 
-  <!-- E-mail -->
   <div class="email-text">
     <a href="mailto:luan.perretto@gmail.com">luan.perretto@gmail.com</a>
   </div>
 
-  <!-- Telefone (linha abaixo do e-mail) -->
   <div class="phone-text">
     <a href="tel:+5541995015111">+55 41 99501-5111</a>
   </div>
 
-  <!-- Seção Sobre -->
   <section id="sobre">
     <h2 class="section-title">SOBRE</h2>
     <div class="bio">
@@ -546,13 +469,11 @@
     </div>
   </section>
 
-  <!-- Seção Projetos -->
   <section id="projetos">
     <h2 class="section-title">PROJETOS</h2>
 
     <div class="gallery">
 
-      <!-- Imagem 1 -->
       <div class="work-item" onclick="openModal('imagem1.png', [
         'A Bienal do Livro de São Paulo sempre homenageia muitas escritoras e escritores, na edição de 2026 foi a vez da Conceição Evaristo e do Mauricio de Sousa!',
         'Nesse clima literário, resgatei um mapa antigo do IBGE de 2018 sobre as regiões literárias e atualizei da minha maneira, como forma de homenagem a esses e todos os profissionais do livro, artistas e educadores. As regiões literárias são os recortes espaciais, exatos ou possíveis, que inspiram e servem de cenário para os universos criados pelos autores em suas obras.',
@@ -569,7 +490,6 @@
         </div>
       </div>
 
-      <!-- Imagem 2 -->
       <div class="work-item" onclick="openModal('imagem2.png', [
         'A ONU mudou sua recomendação de projeção cartográfica do mundo, visando incentivar a representação mais justa e correta da proporção dos continentes, principalmente da África. Ela passou a recomendar a adoção da projeção Equal Earth, criada em 2018, no lugar da tradicional projeção de Mercator, datada do século XVI.',
         'Essa mudança é um marco histórico e resultado da articulação de lideranças africanas, que há anos cobravam um posicionamento da ONU em prol da representação visual equilibrada do mundo em escolas, mídias e documentos globais.'
@@ -585,7 +505,6 @@
         </div>
       </div>
 
-      <!-- Imagem 3 -->
       <div class="work-item" onclick="openModal('imagem3.png', [
         'Nessa semana, o IBGE divulgou os dados atualizados de áreas urbanizadas do Brasil computados em 2022. O mapa ilustrado por mim demonstra estas áreas do estudo, cruzadas com as metrópoles da pesquisa das Regiões de Influência das Cidades (REGIC 2018) também do IBGE.',
         'As áreas urbanizadas são faixas do solo ocupadas por infraestrutura e feições antrópicas construídas, por exemplo vias, calçadas e edifícios. No caso das metrópoles, esses tipos de cidades apresentam, além de manchas urbanizadas, grande população, atratividade de pessoas, fornecimento de serviços, relevância econômica e política.',
@@ -606,7 +525,6 @@
         </div>
       </div>
 
-      <!-- Imagem 4 -->
       <div class="work-item" onclick="openModal('imagem4.png', [
         'Segundo levantamentos do MapBiomas Brasil e do IBGE, respectivamente de 2023 e 2024, o Brasil está aproximadamente 30% coberto por áreas agropecuárias (lavouras e pastagens), enquanto 60% do país corresponde a florestas, sem levar em conta a vegetação campestre.',
         'O mapa ilustrado por mim indica a diferenciação dessas áreas pelo Brasil e Unidades da Federação, sendo possível identificar a proporção de cobertura florestal e agropecuária de cada recorte, o que também reflete as informações trazidas a seguir.',
@@ -626,7 +544,6 @@
         </div>
       </div>
 
-      <!-- Imagem 5 -->
       <div class="work-item" onclick="openModal('imagem5.gif', [
         'Como o fenômeno do Super El Niño pode ser identificado e representado? Para responder isso de maneira sintética, criei um jogo de mapas com dados científicos representando sua evolução no decorrer de 2026.',
         'O El Niño, em linhas gerais, consiste no aquecimento natural e cíclico do Oceano Pacífico a cada três a cinco anos em média, acontecendo entre as latitudes 20°N e 20°S, com picos entre as latitudes 5°N e 5°S.',
@@ -648,7 +565,6 @@
         </div>
       </div>
 
-      <!-- Item 6 -->
       <div class="work-item" onclick="openModal('imagem6.png', ['Descrição detalhada do projeto 6.'])">
         <div class="work-image-wrapper">
           <img src="imagem6.png" alt="Trabalho 6">
@@ -661,7 +577,6 @@
         </div>
       </div>
 
-      <!-- Item 7 -->
       <div class="work-item" onclick="openModal('imagem7.png', ['Descrição detalhada do projeto 7.'])">
         <div class="work-image-wrapper">
           <img src="imagem7.png" alt="Trabalho 7">
@@ -674,7 +589,6 @@
         </div>
       </div>
 
-      <!-- Item 8 -->
       <div class="work-item" onclick="openModal('imagem8.png', ['Descrição detalhada do projeto 8.'])">
         <div class="work-image-wrapper">
           <img src="imagem8.png" alt="Trabalho 8">
@@ -687,7 +601,6 @@
         </div>
       </div>
 
-      <!-- Item 9 -->
       <div class="work-item" onclick="openModal('imagem9.gif', ['Animação infográfica.'])">
         <div class="work-image-wrapper">
           <img src="imagem9.gif" alt="Trabalho 9">
@@ -700,7 +613,6 @@
         </div>
       </div>
 
-      <!-- Item 10 -->
       <div class="work-item" onclick="openModal('imagem10.png', ['Descrição detalhada do projeto 10.'])">
         <div class="work-image-wrapper">
           <img src="imagem10.png" alt="Trabalho 10">
@@ -716,12 +628,10 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer>
     <a href="#topo" class="back-to-top">VOLTAR</a>
   </footer>
 
-  <!-- Modal / Overlay de Visualização Ampliada -->
   <div id="modalOverlay" class="modal-overlay" onclick="closeModalOnOverlay(event)">
     <div class="modal-card">
       <button class="modal-close-btn" onclick="closeModal()">
@@ -739,7 +649,6 @@
     </div>
   </div>
 
-  <!-- Script JavaScript para controlar o Modal -->
   <script>
     function openModal(imageSrc, paragraphs) {
       document.getElementById('modalImg').src = imageSrc;
@@ -782,9 +691,7 @@
       }
     });
 
-    /* ============================================
-       PULL TO REFRESH NO CELULAR (customizado)
-       ============================================ */
+    /* PULL TO REFRESH NO CELULAR */
     (function() {
       let startY = 0;
       let isPulling = false;
@@ -826,9 +733,7 @@
       });
     })();
 
-    /* ============================================
-       DESELECIONA BOTÕES AO ROLAR NO CELULAR
-       ============================================ */
+    /* DESELECIONA BOTÕES AO ROLAR NO CELULAR */
     (function() {
       window.addEventListener('scroll', function() {
         if (!('ontouchstart' in window)) return;
@@ -843,4 +748,16 @@
       document.addEventListener('touchstart', function(e) {
         if (!('ontouchstart' in window)) return;
 
-        const active
+        const activeEl = document.activeElement;
+        if (activeEl && activeEl.tagName === 'A' && 
+            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top'))) {
+          if (!activeEl.contains(e.target)) {
+            activeEl.blur();
+          }
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
