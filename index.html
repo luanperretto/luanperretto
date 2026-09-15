@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luan Perretto</title>
   
-  <!-- Fontes do Google Fonts (Oswald e Crimson Pro) -->
+  <!-- Fontes do Google Fonts (Oswald e PT Serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=Oswald:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Ícones das redes sociais e FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -101,7 +101,7 @@
       scroll-margin-top: 75px;
     }
 
-    /* Cabeçalho Principal com Oswald Semibold (Tamanho aumentado) */
+    /* Cabeçalho Principal com Oswald Semibold */
     h1 { 
       font-family: 'Oswald', sans-serif;
       font-size: 56px; 
@@ -112,13 +112,13 @@
       letter-spacing: 0.5px;
     }
 
-    /* Subtítulo em Crimson Pro caixa alta/baixa com espaçamento simétrico */
+    /* Subtítulo em PT Serif com espaçamento padronizado */
     .subtitle { 
-      font-family: 'Crimson Pro', serif;
+      font-family: 'PT Serif', serif;
       font-size: 20px; 
-      font-weight: 300; 
+      font-weight: 400; 
       color: #555; 
-      margin-bottom: 25px; 
+      margin-bottom: 4px; 
     }
     
     /* Estilo das Seções */
@@ -136,11 +136,11 @@
       color: #111;
     }
 
-    /* Redes Sociais com espaçamento simétrico em relação ao subtítulo e ao e-mail */
+    /* Redes Sociais com espaçamento idêntico (4px) */
     .social-links { 
       display: flex; 
       gap: 12px; 
-      margin-bottom: 25px; 
+      margin-bottom: 4px; 
     }
     .social-links a { 
       display: flex; 
@@ -160,13 +160,13 @@
       transform: translateY(-2px); 
     }
 
-    /* E-mail unificado no mesmo tamanho Crimson Pro (19px) */
+    /* E-mail em PT Serif com margem inferior padronizada (4px) */
     .email-text {
-      font-family: 'Crimson Pro', serif;
-      font-weight: 300;
+      font-family: 'PT Serif', serif;
+      font-weight: 400;
       font-size: 19px;
       color: #222;
-      margin-bottom: 40px;
+      margin-bottom: 4px;
     }
     .email-text a {
       color: #222;
@@ -176,11 +176,20 @@
       text-decoration: underline;
     }
 
-    /* Biografia unificada no mesmo tamanho Crimson Pro (19px) */
+    /* Localização abaixo do e-mail com margem maior para separar do separador/seção */
+    .location-text {
+      font-family: 'PT Serif', serif;
+      font-weight: 400;
+      font-size: 19px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    /* Biografia em PT Serif (19px) */
     .bio { 
-      font-family: 'Crimson Pro', serif;
+      font-family: 'PT Serif', serif;
       font-size: 19px; 
-      font-weight: 300; 
+      font-weight: 400; 
       color: #222; 
     }
 
@@ -238,11 +247,11 @@
       transform: scale(1);
     }
 
-    /* Ícone de expansão minimalista (duas setas/V's espelhados com a mesma espessura do X) */
+    /* Ícone de expansão minimalista com a mesma espessura do botão X */
     .expand-icon-container {
       position: relative;
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -252,25 +261,23 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 6px;
-      height: 6px;
-      border-top: 2.5px solid #333;
-      border-right: 2.5px solid #333;
-      border-top-right-radius: 1px;
+      width: 5px;
+      height: 5px;
+      border-top: 2px solid #333;
+      border-right: 2px solid #333;
     }
 
     .expand-arrow-bottom-left {
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 6px;
-      height: 6px;
-      border-bottom: 2.5px solid #333;
-      border-left: 2.5px solid #333;
-      border-bottom-left-radius: 1px;
+      width: 5px;
+      height: 5px;
+      border-bottom: 2px solid #333;
+      border-left: 2px solid #333;
     }
 
-    /* Modal / Overlay de Visualização Ampliada com fundo cinza mais claro e translúcido */
+    /* Modal / Overlay de Visualização Ampliada com fundo cinza translúcido */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -333,7 +340,7 @@
       background: #e2e8f0;
     }
 
-    /* Container interno com scroll próprio para não vazar por cima das bordas arredondadas */
+    /* Container interno com scroll próprio para respeitar as bordas arredondadas */
     .modal-scroll-content {
       overflow-y: auto;
       max-height: 90vh;
@@ -346,12 +353,12 @@
       display: block;
     }
 
-    /* Descrição do modal em Crimson Pro unificada com 19px */
+    /* Descrição do modal em PT Serif (19px) */
     .modal-description {
       padding: 20px 24px;
       background-color: #fff;
-      font-family: 'Crimson Pro', serif;
-      font-weight: 300;
+      font-family: 'PT Serif', serif;
+      font-weight: 400;
       font-size: 19px;
       color: #222;
       line-height: 1.6;
@@ -411,6 +418,11 @@
     <a href="mailto:luan.perretto@gmail.com">luan.perretto@gmail.com</a>
   </div>
 
+  <!-- Localização -->
+  <div class="location-text">
+    Curitiba | Brasil
+  </div>
+
   <!-- Seção Sobre -->
   <section id="sobre">
     <h2 class="section-title">SOBRE</h2>
@@ -460,7 +472,7 @@
 
       <!-- Imagem 3 -->
       <div class="work-item" onclick="openModal('imagem3.png', [
-        'Nessa semana, o IBGE divulgou os dados atualizados de áreas urbanizadas do Brasil computados em 2022. O mapa ilustrado por mim demonstra estas áreas do estudo, cruzadas com las metrópoles da pesquisa das Regiões de Influência das Cidades (REGIC 2018) também do IBGE.',
+        'Nessa semana, o IBGE divulgou os dados atualizados de áreas urbanizadas do Brasil computados em 2022. O mapa ilustrado por mim demonstra estas áreas do estudo, cruzadas com as metrópoles da pesquisa das Regiões de Influência das Cidades (REGIC 2018) também do IBGE.',
         'As áreas urbanizadas são faixas do solo ocupadas por infraestrutura e feições antrópicas construídas, por exemplo vias, calçadas e edifícios. No caso das metrópoles, esses tipos de cidades apresentam, além de manchas urbanizadas, grande população, atratividade de pessoas, fornecimento de serviços, relevância econômica e política.',
         'O Brasil contém 50 981,91 km² de áreas urbanizadas, aproximadamente 0,6% da sua área territorial, que incluem as 15 metrópoles brasileiras. A maior proporção territorial urbanizada em relação à sua área total é o Distrito Federal, por outro lado, o menor é o estado do Amazonas (IBGE, 2026).',
         'Cabe ressaltar que as áreas urbanizadas diferenciam-se das áreas urbanas. Estas últimas consistem em porções antropizadas vinculadas aos municípios que consideram os terrenos vazios e as malhas urbanas futuras, sendo delimitadas por leis municipais, como o Plano Diretor e a Lei de Zoneamento.',
