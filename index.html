@@ -56,12 +56,11 @@
       scroll-margin-top: 10px;
     }
 
-    /* Menu superior fixo centralizado */
+    /* Menu superior fixo centralizado - SEM LINHA INFERIOR */
     nav { 
       display: flex;
       justify-content: center;
       gap: 45px;
-      border-bottom: 1px solid #ddd; 
       padding-top: 20px;
       padding-bottom: 15px; 
       margin-bottom: 30px; 
@@ -140,14 +139,12 @@
     /* Estilo das Seções */
     section { margin-bottom: 40px; }
     
-    /* Títulos das Seções com Oswald Light */
+    /* Títulos das Seções com Oswald Light - SEM LINHA SUPERIOR */
     .section-title { 
       font-family: 'Oswald', sans-serif;
       font-size: 26px; 
       font-weight: 300; 
       letter-spacing: 0.5px;
-      border-top: 1px solid #ddd; 
-      padding-top: 20px; 
       margin-bottom: 25px; 
       color: #111;
     }
@@ -292,9 +289,12 @@
       border-left: 1px solid #333;
     }
 
-    /* Modal / Overlay de Visualização Ampliada */
+    /* ============================================
+       MODAL / OVERLAY DE VISUALIZAÇÃO AMPLIADA
+       Animação suave de abertura e fechamento
+       ============================================ */
     .modal-overlay {
-      display: none;
+      display: flex;
       position: fixed;
       top: 0;
       left: 0;
@@ -306,10 +306,16 @@
       align-items: center;
       padding: 20px;
       backdrop-filter: blur(4px);
+      /* Fade suave do fundo */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .modal-overlay.active {
-      display: flex;
+      opacity: 1;
+      visibility: visible;
     }
 
     .modal-card {
@@ -323,12 +329,16 @@
       flex-direction: column;
       position: relative;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      animation: modalFadeIn 0.25s ease-out;
+      /* Animação suave de entrada (fade + leve escala) */
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    @keyframes modalFadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    .modal-overlay.active .modal-card {
+      opacity: 1;
+      transform: scale(1);
     }
 
     /* Botão de fechar (X) */
@@ -409,11 +419,10 @@
       margin-bottom: 0;
     }
 
-    /* Rodapé */
+    /* Rodapé - SEM LINHA SUPERIOR */
     footer {
       margin-top: 40px;
       padding: 20px 0 30px 0;
-      border-top: 1px solid #ddd;
       text-align: center;
     }
 
@@ -427,7 +436,7 @@
         padding-left: 12px;
         padding-right: 12px;
       }
-      nav a {
+      nav a, .back-to-top {
         padding: 8px 10px;
         font-size: 17px;
       }
@@ -803,14 +812,4 @@
 
         const activeEl = document.activeElement;
         if (activeEl && activeEl.tagName === 'A' && 
-            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top'))) {
-          if (!activeEl.contains(e.target)) {
-            activeEl.blur();
-          }
-        }
-      }, { passive: true });
-    })();
-  </script>
-
-</body>
-</html>
+            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top')))
