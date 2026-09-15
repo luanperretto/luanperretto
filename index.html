@@ -83,7 +83,7 @@
     nav a, .back-to-top { 
       font-family: 'Oswald', sans-serif;
       font-weight: 300;
-      font-size: 16px;
+      font-size: 18px;
       letter-spacing: 0.5px;
       text-decoration: none; 
       color: #333; 
@@ -412,26 +412,41 @@
 
     /* ============================================
        AJUSTE RESPONSIVO PARA CELULAR
+       INÍCIO à esquerda, SOBRE no meio, PROJETOS à direita
+       Botões com o MESMO efeito hover do desktop
        ============================================ */
     @media (max-width: 500px) {
       nav {
-        gap: 12px;
-        padding-left: 8px;
-        padding-right: 8px;
+        justify-content: space-between;
+        gap: 0;
+        padding-left: 12px;
+        padding-right: 12px;
       }
       nav a {
         padding: 8px 10px;
-        font-size: 15px;
+        font-size: 17px;
       }
       nav a:first-child {
-        margin-right: 15px;
+        margin-right: 0;
       }
       nav a:last-child {
-        margin-left: 15px;
+        margin-left: 0;
       }
       /* Compensa a altura real do cabeçalho no celular */
       #sobre, #projetos {
         scroll-margin-top: 65px;
+      }
+
+      /* ============================================
+         MESMO EFEITO HOVER DO DESKTOP APLICADO NO TOQUE
+         ============================================ */
+      nav a:active,
+      nav a:focus,
+      .back-to-top:active,
+      .back-to-top:focus {
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        color: #000;
       }
     }
   </style>
@@ -724,16 +739,14 @@
 
     /* ============================================
        PULL TO REFRESH NO CELULAR
-       Deslizar o dedo para baixo no cabeçalho recarrega a página
        ============================================ */
     (function() {
       let startY = 0;
       let isPulling = false;
       const nav = document.querySelector('nav');
-      const threshold = 100; // distância em px para disparar o refresh
+      const threshold = 100;
 
       nav.addEventListener('touchstart', function(e) {
-        // Só ativa se a página estiver no topo (scrollY = 0)
         if (window.scrollY === 0) {
           startY = e.touches[0].clientY;
           isPulling = true;
@@ -745,7 +758,6 @@
         const currentY = e.touches[0].clientY;
         const distance = currentY - startY;
 
-        // Se estiver deslizando para baixo, mostra feedback visual
         if (distance > 0) {
           nav.style.transform = `translateY(${Math.min(distance * 0.4, 40)}px)`;
           nav.style.transition = 'none';
@@ -757,11 +769,9 @@
         const endY = e.changedTouches[0].clientY;
         const distance = endY - startY;
 
-        // Reseta a posição do nav com animação
         nav.style.transition = 'transform 0.3s ease';
         nav.style.transform = 'translateY(0)';
 
-        // Se deslizou o suficiente, recarrega
         if (distance > threshold) {
           location.reload();
         }
@@ -773,11 +783,8 @@
 
     /* ============================================
        DESELECIONA BOTÕES AO ROLAR NO CELULAR
-       Remove o :focus dos links do menu e do botão VOLTAR
-       quando o usuário começa a rolar a página
        ============================================ */
     (function() {
-      // Remove o foco ao rolar a página (somente em dispositivos touch)
       window.addEventListener('scroll', function() {
         if (!('ontouchstart' in window)) return;
 
@@ -788,14 +795,12 @@
         }
       }, { passive: true });
 
-      // Remove o foco ao tocar em qualquer outro lugar da tela (fora do botão)
       document.addEventListener('touchstart', function(e) {
         if (!('ontouchstart' in window)) return;
 
         const activeEl = document.activeElement;
         if (activeEl && activeEl.tagName === 'A' && 
             (activeEl.closest('nav') || activeEl.classList.contains('back-to-top'))) {
-          // Se o toque NÃO foi no próprio link focado, remove o foco
           if (!activeEl.contains(e.target)) {
             activeEl.blur();
           }
