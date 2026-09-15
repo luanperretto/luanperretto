@@ -35,9 +35,10 @@
       background: #94a3b8;
     }
     
-    /* Rolagem suave */
+    /* Rolagem suave + bloqueia pull-to-refresh nativo do navegador */
     html { 
       scroll-behavior: smooth; 
+      overscroll-behavior-y: contain;
     }
 
     body { 
@@ -47,6 +48,7 @@
       max-width: 650px; 
       margin: 0 auto; 
       line-height: 1.6; 
+      overscroll-behavior-y: contain;
     }
     
     /* Anchor para o topo fixo */
@@ -103,6 +105,11 @@
     nav a:active, nav a:focus, .back-to-top:active, .back-to-top:focus {
       background-color: transparent;
       box-shadow: none;
+    }
+
+    /* Remove a "piscada" escura automática do celular ao tocar */
+    nav a, .back-to-top, .social-links a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* Ajuste fino da parada do scroll nas seções */
@@ -412,8 +419,6 @@
 
     /* ============================================
        AJUSTE RESPONSIVO PARA CELULAR
-       INÍCIO à esquerda, SOBRE no meio, PROJETOS à direita
-       Botões com o MESMO efeito hover do desktop
        ============================================ */
     @media (max-width: 500px) {
       nav {
@@ -437,9 +442,7 @@
         scroll-margin-top: 65px;
       }
 
-      /* ============================================
-         MESMO EFEITO HOVER DO DESKTOP APLICADO NO TOQUE
-         ============================================ */
+      /* MESMO EFEITO HOVER DO DESKTOP APLICADO NO TOQUE */
       nav a:active,
       nav a:focus,
       .back-to-top:active,
@@ -738,7 +741,7 @@
     });
 
     /* ============================================
-       PULL TO REFRESH NO CELULAR
+       PULL TO REFRESH NO CELULAR (customizado)
        ============================================ */
     (function() {
       let startY = 0;
