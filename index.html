@@ -279,10 +279,11 @@
       transform: scale(1);
     }
 
+    /* Botão X afastado da scrollbar no desktop */
     .modal-close-btn {
       position: absolute;
       top: 14px;
-      right: 14px;
+      right: 24px;
       width: 36px;
       height: 36px;
       background: rgba(255, 255, 255, 0.9);
@@ -435,6 +436,12 @@
         background-color: #fff;
         width: 100%;
         box-sizing: border-box;
+      }
+
+      /* No celular, o X volta para a posição original (14px) */
+      .modal-close-btn {
+        top: 14px;
+        right: 14px;
       }
     }
   </style>
