@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luan Perretto</title>
   
-  <!-- Fonte Roboto do Google Fonts (Pesos: 400 Normal, 500 Medium, 700 Bold) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,700&display=swap" rel="stylesheet">
 
-  <!-- Ícones das redes sociais (FontAwesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -18,6 +16,21 @@
       box-sizing: border-box; 
       margin: 0; 
       padding: 0; 
+    }
+    
+    /* Estilização da barra de rolagem lateral (Scrollbar moderna) */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
     }
     
     /* Rolagem suave */
@@ -56,7 +69,7 @@
 
     nav a { 
       font-family: 'Roboto', sans-serif;
-      font-weight: 500; /* Roboto Seminegrito */
+      font-weight: 500;
       font-size: 15px;
       text-decoration: none; 
       color: #333; 
@@ -76,9 +89,9 @@
       scroll-margin-top: 75px;
     }
 
-    /* Cabeçalho Principal */
+    /* Cabeçalho Principal com Roboto Serif */
     h1 { 
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto Serif', serif;
       font-size: 46px; 
       font-weight: 700; 
       margin-bottom: 6px; 
@@ -98,10 +111,12 @@
     
     /* Estilo das Seções */
     section { margin-bottom: 40px; }
+    
+    /* Títulos das Seções com Roboto Serif */
     .section-title { 
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Roboto Serif', serif;
       font-size: 26px; 
-      font-weight: 500; /* Roboto Seminegrito */
+      font-weight: 500; 
       border-top: 1px solid #ddd; 
       padding-top: 20px; 
       margin-bottom: 25px; 
@@ -188,7 +203,7 @@
       font-size: 14px;
       font-weight: 500;
       padding: 8px 18px;
-      border-radius: 6px; /* Mesma curvatura dos botões do menu */
+      border-radius: 6px;
       transition: background-color 0.2s, transform 0.2s;
       user-select: none;
     }
@@ -272,7 +287,7 @@
       padding: 20px 24px;
       background-color: #fff;
       font-family: 'Roboto', sans-serif;
-      font-weight: 400; /* Roboto Normal */
+      font-weight: 400;
       font-size: 15px;
       color: #333;
       line-height: 1.6;
@@ -306,7 +321,7 @@
     .back-to-top {
       display: inline-block;
       font-family: 'Roboto', sans-serif;
-      font-weight: 500; /* Roboto Seminegrito */
+      font-weight: 500;
       font-size: 15px;
       text-decoration: none;
       color: #333;
@@ -324,10 +339,8 @@
 </head>
 <body>
 
-  <!-- Ponto de referência para o topo -->
   <div id="topo"></div>
 
-  <!-- Menu superior com caixinhas -->
   <nav>
     <a href="#topo">Início</a>
     <a href="#contato">Contato</a>
@@ -335,37 +348,29 @@
     <a href="#trabalhos">Trabalhos</a>
   </nav>
 
-  <!-- Cabeçalho Principal -->
   <h1>Luan Perretto</h1>
   <div class="subtitle">Editor de Geografia | Cartógrafo</div>
 
-  <!-- Seção Contato -->
   <section id="contato">
     <h2 class="section-title">Contato</h2>
     
-    <!-- Redes Sociais -->
     <div class="social-links">
-      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/luanperretto/?skipRedirect=true" target="_blank" title="LinkedIn">
         <i class="fa-brands fa-linkedin-in"></i>
       </a>
-      <!-- GitHub -->
       <a href="https://github.com/luanperretto" target="_blank" title="GitHub">
         <i class="fa-brands fa-github"></i>
       </a>
-      <!-- Substack -->
       <a href="https://substack.com/@luanperretto" target="_blank" title="Substack">
         <i class="fa-solid fa-bookmark"></i>
       </a>
     </div>
 
-    <!-- E-mail -->
     <div class="email-text">
       <a href="mailto:luan.perretto@gmail.com">luan.perretto@gmail.com</a>
     </div>
   </section>
 
-  <!-- Seção Sobre -->
   <section id="sobre">
     <h2 class="section-title">Sobre</h2>
     <div class="bio">
@@ -373,13 +378,11 @@
     </div>
   </section>
 
-  <!-- Seção Trabalhos -->
   <section id="trabalhos">
     <h2 class="section-title">Trabalhos</h2>
 
     <div class="gallery">
 
-      <!-- Imagem 1 -->
       <div class="work-item" onclick="openModal('imagem1.png', 'As regiões literárias do Brasil', [
         'A Bienal do Livro de São Paulo sempre homenageia muitas escritoras e escritores, na edição de 2026 foi a vez da Conceição Evaristo e do Mauricio de Sousa!',
         'Nesse clima literário, resgatei um mapa antigo do IBGE de 2018 sobre as regiões literárias e atualizei da minha maneira, como forma de homenagem a esses e todos os profissionais do livro, artistas e educadores. As regiões literárias são os recortes espaciais, exatos ou possíveis, que inspiram e servem de cenário para os universos criados pelos autores em suas obras.',
@@ -389,7 +392,6 @@
         <span class="watermark-badge">Acesse</span>
       </div>
 
-      <!-- Imagem 2 -->
       <div class="work-item" onclick="openModal('imagem2.png', 'A mudança de projeção cartográfica na ONU', [
         'A ONU mudou sua recomendação de projeção cartográfica do mundo, visando incentivar a representação mais justa e correta da proporção dos continentes, principalmente da África. Ela passou a recomendar a adoção da projeção Equal Earth, criada em 2018, no lugar da tradicional projeção de Mercator, datada do século XVI.',
         'Essa mudança é um marco histórico e resultado da articulação de lideranças africanas, que há anos cobravam um posicionamento da ONU em prol da representação visual equilibrada do mundo em escolas, mídias e documentos globais.'
@@ -398,7 +400,6 @@
         <span class="watermark-badge">Acesse</span>
       </div>
 
-      <!-- Imagem 3 -->
       <div class="work-item" onclick="openModal('imagem3.png', 'Brasil: áreas urbanizadas e metrópoles', [
         'Nessa semana, o IBGE divulgou os dados atualizados de áreas urbanizadas do Brasil computados em 2022. O mapa ilustrado por mim demonstra estas áreas do estudo, cruzadas com as metrópoles da pesquisa das Regiões de Influência das Cidades (REGIC 2018) também do IBGE.',
         'As áreas urbanizadas são faixas do solo ocupadas por infraestrutura e feições antrópicas construídas, por exemplo vias, calçadas e edifícios. No caso das metrópoles, esses tipos de cidades apresentam, além de manchas urbanizadas, grande população, atratividade de pessoas, fornecimento de serviços, relevância econômica e política.',
@@ -412,7 +413,6 @@
         <span class="watermark-badge">Acesse</span>
       </div>
 
-      <!-- Imagem 4 -->
       <div class="work-item" onclick="openModal('imagem4.png', 'Brasil: áreas agropecuárias e florestas', [
         'Segundo levantamentos do MapBiomas Brasil e do IBGE, respectivamente de 2023 e 2024, o Brasil está aproximadamente 30% coberto por áreas agropecuárias (lavouras e pastagens), enquanto 60% do país corresponde a florestas, sem levar em conta a vegetação campestre.',
         'O mapa ilustrado por mim indica a diferenciação dessas áreas pelo Brasil e Unidades da Federação, sendo possível identificar a proporção de cobertura florestal e agropecuária de cada recorte, o que também reflete as informações trazidas a seguir.',
@@ -425,7 +425,6 @@
         <span class="watermark-badge">Acesse</span>
       </div>
 
-      <!-- Imagem 5 -->
       <div class="work-item" onclick="openModal('imagem5.gif', 'Super El Niño', [
         'Como o fenômeno do Super El Niño pode ser identificado e representado? Para responder isso de maneira sintética, criei um jogo de mapas com dados científicos representando sua evolução no decorrer de 2026.',
         'O El Niño, em linhas gerais, consiste no aquecimento natural e cíclico do Oceano Pacífico a cada três a cinco anos em média, acontecendo entre as latitudes 20°N e 20°S, com picos entre as latitudes 5°N e 5°S.',
@@ -440,32 +439,27 @@
         <span class="watermark-badge">Acesse</span>
       </div>
 
-      <!-- Item 6 (Mantenha ou atualize conforme preferir) -->
-      <div class="work-item" onclick="openModal('imagem6.png', 'Título do Projeto 6', ['Descrição detalhada do projeto 6.'])">
+      <div class="work-item" onclick="openModal('imagem6.png', '', ['Descrição detalhada do projeto 6.'])">
         <img src="imagem6.png" alt="Trabalho 6">
         <span class="watermark-badge">Acesse</span>
       </div>
 
-      <!-- Item 7 -->
-      <div class="work-item" onclick="openModal('imagem7.png', 'Título do Projeto 7', ['Descrição detalhada do projeto 7.'])">
+      <div class="work-item" onclick="openModal('imagem7.png', '', ['Descrição detalhada do projeto 7.'])">
         <img src="imagem7.png" alt="Trabalho 7">
         <span class="watermark-badge">Acesse</span>
       </div>
 
-      <!-- Item 8 -->
-      <div class="work-item" onclick="openModal('imagem8.png', 'Título do Projeto 8', ['Descrição detalhada do projeto 8.'])">
+      <div class="work-item" onclick="openModal('imagem8.png', '', ['Descrição detalhada do projeto 8.'])">
         <img src="imagem8.png" alt="Trabalho 8">
         <span class="watermark-badge">Acesse</span>
       </div>
 
-      <!-- Item 9 -->
-      <div class="work-item" onclick="openModal('imagem9.gif', 'Título do Projeto 9', ['Animação infográfica.'])">
+      <div class="work-item" onclick="openModal('imagem9.gif', '', ['Animação infográfica.'])">
         <img src="imagem9.gif" alt="Trabalho 9">
         <span class="watermark-badge">Acesse</span>
       </div>
 
-      <!-- Item 10 -->
-      <div class="work-item" onclick="openModal('imagem10.png', 'Título do Projeto 10', ['Descrição detalhada do projeto 10.'])">
+      <div class="work-item" onclick="openModal('imagem10.png', '', ['Descrição detalhada do projeto 10.'])">
         <img src="imagem10.png" alt="Trabalho 10">
         <span class="watermark-badge">Acesse</span>
       </div>
@@ -473,12 +467,10 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer>
     <a href="#topo" class="back-to-top">Voltar</a>
   </footer>
 
-  <!-- Modal / Overlay de Visualização Ampliada -->
   <div id="modalOverlay" class="modal-overlay" onclick="closeModalOnOverlay(event)">
     <div class="modal-card">
       <button class="modal-close-btn" onclick="closeModal()">&times;</button>
@@ -490,11 +482,18 @@
     </div>
   </div>
 
-  <!-- Script JavaScript para controlar o Modal -->
   <script>
     function openModal(imageSrc, title, paragraphs) {
       document.getElementById('modalImg').src = imageSrc;
-      document.getElementById('modalTitle').innerText = title;
+      
+      const titleElement = document.getElementById('modalTitle');
+      if (title && title.trim() !== '') {
+        titleElement.innerText = title;
+        titleElement.style.display = 'block';
+      } else {
+        titleElement.innerText = '';
+        titleElement.style.display = 'none';
+      }
       
       const textContainer = document.getElementById('modalTextContainer');
       textContainer.innerHTML = '';
@@ -504,11 +503,9 @@
         textContainer.appendChild(p);
       });
 
-      // Abre o modal primeiro para o elemento aparecer no DOM
       document.getElementById('modalOverlay').classList.add('active');
       document.body.style.overflow = 'hidden';
 
-      // Reseta a rolagem do modal imediatamente e com um leve atraso de segurança
       const modalCard = document.querySelector('.modal-card');
       modalCard.scrollTop = 0;
       setTimeout(() => {
@@ -520,7 +517,6 @@
       document.getElementById('modalOverlay').classList.remove('active');
       document.body.style.overflow = 'auto';
       
-      // Reseta ao fechar também, por garantia
       const modalCard = document.querySelector('.modal-card');
       modalCard.scrollTop = 0;
     }
