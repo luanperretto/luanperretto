@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Luan Perretto</title>
   
-  <!-- Fontes do Google Fonts (Oswald e Work Sans Light) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
 
-  <!-- Ícones das redes sociais e FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -24,6 +22,21 @@
     ::-webkit-scrollbar-track { background: #f1f1f1; }
     ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+    /* Scrollbar do modal - visível no desktop e no celular */
+    .modal-scroll-content::-webkit-scrollbar {
+      width: 6px;
+    }
+    .modal-scroll-content::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .modal-scroll-content::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    .modal-scroll-content::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
     
     html { 
       scroll-behavior: smooth; 
@@ -42,7 +55,6 @@
     
     #topo { scroll-margin-top: 10px; }
 
-    /* Menu superior fixo - BOTÕES NAS EXTREMIDADES */
     nav { 
       display: flex;
       justify-content: space-between;
@@ -239,7 +251,6 @@
       border-left: 1px solid #333;
     }
 
-    /* MODAL */
     .modal-overlay {
       display: flex;
       position: fixed;
@@ -337,6 +348,8 @@
       border-radius: 16px;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: #cbd5e1 transparent;
     }
 
     .modal-card img {
@@ -364,9 +377,6 @@
       text-align: center;
     }
 
-    /* ============================================
-       AJUSTE RESPONSIVO PARA CELULAR
-       ============================================ */
     @media (max-width: 500px) {
       nav {
         justify-content: space-between;
@@ -401,10 +411,6 @@
         color: #000;
       }
 
-      /* ============================================
-         MODAL NO CELULAR: sem faixa branca lateral
-         e com o MESMO efeito de abertura do desktop
-         ============================================ */
       .modal-overlay {
         padding: 0;
         align-items: stretch;
@@ -416,7 +422,6 @@
         height: 100vh;
         border-radius: 0;
         margin: 0;
-        /* Mesmo efeito de abertura do desktop */
         opacity: 0;
         transform: scale(0.92);
         transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
@@ -430,8 +435,9 @@
         max-height: 100vh;
         border-radius: 0;
         background-color: #fff;
+        scrollbar-width: thin;
+        scrollbar-color: #cbd5e1 transparent;
       }
-      /* Imagem ocupa 100% sem criar vãos laterais */
       .modal-card img {
         width: 100%;
         max-width: 100%;
@@ -760,24 +766,4 @@
 
         const activeEl = document.activeElement;
         if (activeEl && activeEl.tagName === 'A' && 
-            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top'))) {
-          activeEl.blur();
-        }
-      }, { passive: true });
-
-      document.addEventListener('touchstart', function(e) {
-        if (!('ontouchstart' in window)) return;
-
-        const activeEl = document.activeElement;
-        if (activeEl && activeEl.tagName === 'A' && 
-            (activeEl.closest('nav') || activeEl.classList.contains('back-to-top'))) {
-          if (!activeEl.contains(e.target)) {
-            activeEl.blur();
-          }
-        }
-      }, { passive: true });
-    })();
-  </script>
-
-</body>
-</html>
+            (activeEl.closest('nav
