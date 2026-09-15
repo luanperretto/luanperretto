@@ -54,11 +54,11 @@
       scroll-margin-top: 10px;
     }
 
-    /* Menu superior fixo sem formato de caixa sólida, apenas sombra no hover */
+    /* Menu superior fixo com largura proporcional ao botão Voltar */
     nav { 
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 12px;
       border-bottom: 1px solid #ddd; 
       padding-top: 20px;
       padding-bottom: 15px; 
@@ -69,26 +69,27 @@
       z-index: 10;
     }
 
-    nav a { 
+    nav a, .back-to-top { 
       font-family: 'Oswald', sans-serif;
       font-weight: 300;
       font-size: 16px;
       letter-spacing: 0.5px;
       text-decoration: none; 
       color: #333; 
-      background-color: transparent; /* Sem formato de botão */
-      padding: 8px 0;
+      background-color: transparent; 
+      padding: 8px 25px; /* Mesma proporção de largura/padding do Voltar */
       text-align: center;
       border-radius: 6px;
       transition: box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s; 
     }
-    nav a:hover { 
+
+    nav a:hover, .back-to-top:hover { 
       background-color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave ao passar o cursor */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
       color: #000; 
     }
-    /* Sombra some ao focar/selecionar ou interagir ativamente */
-    nav a:active, nav a:focus {
+
+    nav a:active, nav a:focus, .back-to-top:active, .back-to-top:focus {
       background-color: transparent;
       box-shadow: none;
     }
@@ -98,10 +99,10 @@
       scroll-margin-top: 75px;
     }
 
-    /* Cabeçalho Principal com Oswald Semibold */
+    /* Cabeçalho Principal com Oswald Semibold (Tamanho aumentado) */
     h1 { 
       font-family: 'Oswald', sans-serif;
-      font-size: 48px; 
+      font-size: 56px; 
       font-weight: 600; 
       margin-bottom: 4px; 
       color: #111; 
@@ -109,12 +110,11 @@
       letter-spacing: 0.5px;
     }
 
-    /* Subtítulo em Oswald Light */
+    /* Subtítulo em Crimson Pro Light */
     .subtitle { 
-      font-family: 'Oswald', sans-serif;
-      font-size: 18px; 
+      font-family: 'Crimson Pro', serif;
+      font-size: 20px; 
       font-weight: 300; 
-      letter-spacing: 0.8px; 
       color: #555; 
       margin-bottom: 20px; 
     }
@@ -310,36 +310,12 @@
       margin-bottom: 0;
     }
 
-    /* Rodapé com botão Voltar ajustado (sem formato sólido de botão, apenas sombra no hover) */
+    /* Rodapé */
     footer {
       margin-top: 40px;
       padding: 20px 0 30px 0;
       border-top: 1px solid #ddd;
       text-align: center;
-    }
-
-    .back-to-top {
-      display: inline-block;
-      font-family: 'Oswald', sans-serif;
-      font-weight: 300;
-      font-size: 16px;
-      letter-spacing: 0.5px;
-      text-decoration: none;
-      color: #333;
-      background-color: transparent;
-      padding: 8px 25px;
-      border-radius: 6px;
-      transition: box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s;
-    }
-
-    .back-to-top:hover {
-      background-color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      color: #000;
-    }
-    .back-to-top:active, .back-to-top:focus {
-      background-color: transparent;
-      box-shadow: none;
     }
   </style>
 </head>
@@ -348,7 +324,7 @@
   <!-- Ponto de referência para o topo -->
   <div id="topo"></div>
 
-  <!-- Menu superior com links em Oswald Light -->
+  <!-- Menu superior -->
   <nav>
     <a href="#topo">INÍCIO</a>
     <a href="#sobre">SOBRE</a>
@@ -424,7 +400,7 @@
         'O Brasil contém 50 981,91 km² de áreas urbanizadas, aproximadamente 0,6% da sua área territorial, que incluem as 15 metrópoles brasileiras. A maior proporção territorial urbanizada em relação à sua área total é o Distrito Federal, por outro lado, o menor é o estado do Amazonas (IBGE, 2026).',
         'Cabe ressaltar que as áreas urbanizadas diferenciam-se das áreas urbanas. Estas últimas consistem em porções antropizadas vinculadas aos municípios que consideram os terrenos vazios e as malhas urbanas futuras, sendo delimitadas por leis municipais, como o Plano Diretor e a Lei de Zoneamento.',
         'Os dados revelam a concentração de feições urbanizadas e metrópoles na região Sudeste e no litoral brasileiro. Além disso, cerca de 50% das áreas urbanizadas do país estão nos estados de São Paulo, Minas Gerais, Bahia, Paraná e Rio Grande do Sul (IBGE, 2026).',
-        'A região Nordeste teve a maior expansão horizontal de área urbanizada absoluta de 2019 a 2022, alcançando 1 961,44 km² adicionadas, o que equivale a 1,5 vezes a Ilha de São Luís no Maranhão. Enquanto isso, as regiões Norte e Centro-Oeste contêm tímida participação nas manchas urbanizadas, com exceção das regiões metropolitanas de Brasília, Goiânia, Belém e Manaus.',
+        'A região Nordeste teve a maior expansão horizontal de área urbanizada absoluta de 2019 a 2022, alcançando 1 961,44 km² adicionadas, o que equivale a 1,5 vezes a Ilha de São Luís no Maranhão. Enquanto isso, das regiões Norte e Centro-Oeste contêm tímida participação nas manchas urbanizadas, com exceção das regiões metropolitanas de Brasília, Goiânia, Belém e Manaus.',
         'Cruzando essas informações com os dados da REGIC, identifica-se correspondência das metrópoles com as grandes manchas urbanizadas e conurbadas do país. Isso reflete a concentração de infraestrutura que esses centros exibem, nexo direto com a amplitude da sua influência nacional e regional.'
       ])">
         <div class="work-image-wrapper">
